@@ -25,7 +25,8 @@ namespace LYLAcademy.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Course>>> GetCourses()
         {
-            return await _context.Courses.ToListAsync();
+            var courses = await _context.Courses.ToListAsync();
+            return Ok(courses);
         }
 
         // GET: api/Courses/5

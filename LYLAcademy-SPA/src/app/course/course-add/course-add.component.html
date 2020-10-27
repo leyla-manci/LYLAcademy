@@ -1,0 +1,36 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="courseAddForm" (ngSubmit)="add()">
+        <h4 class="mt-3 pt-3">Add New Course</h4>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Course Name" autofocus />
+            <span class="help-block" *ngIf="courseAddForm.get('name').hasError('required') && courseAddForm.get('name').touched">Course Name is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="description" formControlName="description" placeholder="Course description"  />
+            <span class="help-block" *ngIf="courseAddForm.get('description').hasError('required') && courseAddForm.get('description').touched">Course description is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="duration" formControlName="duration" placeholder="Course duration"  />
+            <span class="help-block" *ngIf="courseAddForm.get('duration').hasError('required') && courseAddForm.get('duration').touched">Course duration is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="number" class="form-control" id="price" formControlName="price" placeholder="Course price" autofcus />
+            <span class="help-block" *ngIf="courseAddForm.get('price').hasError('required') && courseAddForm.get('price').touched">Course price is required</span>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary btn-block col-md-6" [disabled]="!courseAddForm.valid"> Add </button>
+        <h6>{{courseAddForm.value|json}}</h6>
+        <h6>{{courseAddForm.status|json}}</h6>
+      </form>
+    </div>
+  </div>
+</main>

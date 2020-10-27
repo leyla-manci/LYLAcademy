@@ -1,3 +1,46 @@
-<p>
-  course works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1> </h1>
+       <button type="button" routerLink="/courseAdd"  class="btn btn-sm btn-outline-primary">
+        Add New Course
+       </button>
+       <hr/>
+      </div>
+  </div>
+  <div class="row"> 
+    <div *ngFor="let course of courses" class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <svg
+          class="bd-placeholder-img card-img-top"
+          width="100%"
+          height="100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+          aria-label="Placeholder: Thumbnail"
+        >
+          <title>{{course.name}}</title>
+          <rect width="100%" height="100%" fill="#adb5bd" />
+          <text style="text-transform:uppercase" x="30%" y="50%" fill="#eceeef" dy=".3em">{{course.name}}</text>
+        </svg>
+        <div class="card-body">
+          <p class="card-text">{{course.description}}
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                Delete
+              </button>
+              <button type="button" routerLink="/courseDetail/{{course.courseId}}" class="btn btn-sm btn-outline-secondary">
+                Edit
+              </button>
+            </div>
+            <small class="text-muted">{{course.duration}}  - {{course.price}} TL</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

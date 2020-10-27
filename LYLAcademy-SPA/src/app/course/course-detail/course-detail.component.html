@@ -1,0 +1,55 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Course Detail</h4>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Course Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="{{ course.name }}"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="description">Course Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              placeholder="{{ course.description }}"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="duration">Duration</label>
+            <input
+              type="text"
+              class="form-control"
+              id="duration"
+              placeholder="{{ course.duration }}"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="price">Price</label>
+            <input
+              type="text"
+              class="form-control"
+              id="price"
+              placeholder="{{ course.price }}"
+            />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</main>
