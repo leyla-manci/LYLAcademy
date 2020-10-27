@@ -10,6 +10,7 @@ using LYLAcademy.API.Dtos;
 using LYLAcademy.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -72,7 +73,9 @@ namespace LYLAcademy.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var tokenString = tokenHandler.WriteToken(token);
-            return Ok(tokenString);
+            var resultStr = new StringResultDto();
+            resultStr.ResultString = tokenString.ToString();
+            return Ok(resultStr);
 
         }
     }

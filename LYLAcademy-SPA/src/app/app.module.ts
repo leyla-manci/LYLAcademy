@@ -11,7 +11,9 @@ import { CourseComponent } from './course/course.component';
 import { CourseDetailComponent } from './course/course-detail/course-detail.component';
 import { CourseAddComponent } from './course/course-add/course-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AlertifyService } from "./services/alertify.service";
+import { AlertifyService } from './services/alertify.service';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { AlertifyService } from "./services/alertify.service";
     CourseComponent,
     CourseDetailComponent,
     CourseAddComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
