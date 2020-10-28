@@ -2,14 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\LYLAcademy-SPA",
-    "\\LYLAcademy-SPA\\e2e",
-    "\\LYLAcademy-SPA\\e2e\\src",
-    "\\LYLAcademy-SPA\\src",
-    "\\LYLAcademy-SPA\\src\\app",
-    "\\LYLAcademy-SPA\\src\\assets",
-    "\\LYLAcademy-SPA\\src\\environments",
     "\\LYLAcademy.API"
   ],
-  "SelectedNode": "\\LYLAcademy-SPA",
+  "SelectedNode": "\\LYLAcademy.API\\LYLAcademy.API.sln",
   "PreviewInSolutionExplorer": false
 }

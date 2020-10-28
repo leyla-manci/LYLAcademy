@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1></h1>
+      <button
+        type="button"
+        routerLink="/userAdd"
+        class="btn btn-sm btn-outline-primary"
+      >
+        Add New User
+      </button>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">User Id</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Password</th>
+          <th scope="col">Is Teacher</th>
+          <th scope="col">Is Student</th>
+          <th scope="col">Is Admin</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <th scope="row">{{ user.userId }}</th>
+          <td>{{ user.name }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <select
+              class="custom-select"
+              disabled
+              id="isTeacher"
+              value="{{ user.isTeacher }}"
+            >
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </td>
+          <td>
+            <select
+              class="custom-select"
+              disabled
+              id="isStudent"
+              value="{{ user.isStudent }}"
+            >
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </td>
+          <td>
+            <select
+              class="custom-select"
+              disabled
+              id="isAdmin"
+              value="{{ user.isAdmin }}"
+            >
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+            </select>
+          </td>
+          <td>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(user.userId)">
+              Delete
+            </button>
+            |
+            <button
+              type="button"
+              routerLink="/userDetail/{{ user.userId }}"
+              class="btn btn-sm btn-outline-secondary"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

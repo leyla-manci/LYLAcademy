@@ -25,13 +25,24 @@ export class AuthService {
     headers = headers.append('Content-Type', 'application/json');
     this.httpClient
       .post<string>(this.path + 'login', loginUser, { headers: headers })
-      .subscribe((data) => {
-        this.saveToken(data['resultString']);
-        this.userToken = data['resultString'];
-        this.decodeToken = this.jwtHelper.decodeToken(data['resultString']);
-        this.alertifyService.success('Login is successful.');
-        this.router.navigateByUrl('/home');
-      });
+      .subscribe(
+        (data) => {
+          this.saveToken(data['resultString']);
+          this.userToken = data['resultString'];
+          this.decodeToken = this.jwtHelper.decodeToken(data['resultString']);
+          this.alertifyService.success('Login is successful.');
+        },
+        (error) => {
+          if (!this.loggedIn()) {
+            this.alertifyService.notify('Login failed.', 'error');
+          }
+        },
+        () => {
+          // 'onCompleted' callback.
+          // No errors, route to new page here
+          this.router.navigateByUrl('/home');
+        }
+      );
   }
 
   saveToken(token) {
@@ -44,12 +55,22 @@ export class AuthService {
       .post(this.path + 'register', registerUser, { headers: headers })
       .subscribe((data) => {
         this.alertifyService.success('Register is successful.');
-        this.router.navigateByUrl('/course');
+       
+      },
+      (error) => {
+          this.alertifyService.notify('Register failed.'+error, 'error');
+       
+      },
+      () => {
+        // 'onCompleted' callback.
+        // No errors, route to new page here
+        this.router.navigateByUrl('/users');
       });
   }
 
   logOut() {
     localStorage.removeItem(this.TOKEN_KEY);
+    this.alertifyService.success('Logout is successful.');
   }
   loggedIn() {
     return tokenNotExpired(this.TOKEN_KEY);
@@ -59,6 +80,6 @@ export class AuthService {
   }
 
   getCurrentUserId() {
-    return this.jwtHelper.decodeToken(this.token).nameId;
+    return this.jwtHelper.decodeToken(this.token).nameid;
   }
 }

@@ -5,8 +5,10 @@ import {
   Validators,
   FormBuilder,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginUser } from '../models/loginUser';
 import { User } from '../models/User';
+import { AlertifyService } from '../services/alertify.service';
 import { AuthService } from '../services/Auth.service';
 
 @Component({
@@ -17,7 +19,9 @@ import { AuthService } from '../services/Auth.service';
 export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router,    
+    private alertifyService: AlertifyService
   ) {}
 
   loginUser: LoginUser;
@@ -31,12 +35,19 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.createLoginForm();
+    if (this.isAuthenticated) {
+      this.router.navigateByUrl('/home');
+    } else {
+      this.createLoginForm();
+    }
   }
   login() {
     if (this.loginForm.valid) {
       this.loginUser = Object.assign({}, this.loginForm.value);
       this.authService.login(this.loginUser);
     }
+  }
+  get isAuthenticated() {
+    return this.authService.loggedIn();
   }
 }

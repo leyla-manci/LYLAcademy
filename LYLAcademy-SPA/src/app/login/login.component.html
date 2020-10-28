@@ -1,6 +1,7 @@
 <main role="main" class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <h4 class="mt-3 pt-3">Login</h4>
         <div class="form-row">
@@ -16,8 +17,8 @@
           </div>
         </div>
         <button type="submit" class="btn btn-lg btn-primary btn-block col-md-6" [disabled]="!loginForm.valid"> Login </button>
-        <h6>{{loginForm.value|json}}</h6>
-        <h6>{{loginForm.status|json}}</h6>
+      <!--  <h6>{{loginForm.value|json}}</h6>
+        <h6>{{loginForm.status|json}}</h6>-->
       </form>
     </div>
   </div>

@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertifyService } from './services/alertify.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { UserAddComponent } from './user/user-add/user-add.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { LoginComponent } from './login/login.component';
     CourseAddComponent,
     HomeComponent,
     LoginComponent,
+    UserComponent,
+    UserAddComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,

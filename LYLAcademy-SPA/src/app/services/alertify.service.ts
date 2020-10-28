@@ -16,4 +16,7 @@ export class AlertifyService {
   warning(message: string) {
     alertify.warninng(message);
   }
+  notify(message:string,messageType:string){
+    var notification = alertify.notify(message, messageType, 3, function(){  console.log('dismissed'); });
+    }
 }
