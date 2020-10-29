@@ -1,54 +1,44 @@
 <main role="main" class="container">
   <div class="row">
     <div class="col-md-12">
-      <h4>Course Detail</h4>
-      <form>
+      <form [formGroup]="courseEditForm" (ngSubmit)="save()">
+        <input hidden type="text" class="form-control" id="courseId" formControlName="courseId"  name="courseId"   [(ngModel)]="course.courseId"/>
+        <h4 class="mt-3 pt-3">Edit Course</h4>
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="name">Course Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              placeholder="{{ course.name }}"
-            />
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="course Name" autofocus   name="name"   [(ngModel)]="course.name"/>
+            <span class="help-block" *ngIf="courseEditForm.get('name').hasError('required') && courseEditForm.get('name').touched">Course Name is required</span>
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="description">Course Description</label>
-            <textarea
-              class="form-control"
-              id="description"
-              rows="3"
-              placeholder="{{ course.description }}"
-            ></textarea>
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="duration" formControlName="duration" placeholder="Duration"   name="duration"   [(ngModel)]="course.duration" />
+            <span class="help-block" *ngIf="courseEditForm.get('duration').hasError('required') && courseEditForm.get('duration').touched">Duration is required</span>
           </div>
         </div>
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="duration">Duration</label>
-            <input
-              type="text"
-              class="form-control"
-              id="duration"
-              placeholder="{{ course.duration }}"
-            />
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="description" formControlName="description" placeholder="Description"  name="description"   [(ngModel)]="course.description" />
+            <span class="help-block" *ngIf="courseEditForm.get('description').hasError('required') && courseEditForm.get('description').touched">Description is required</span>
+             
           </div>
         </div>
-
         <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="price">Price</label>
-            <input
-              type="text"
-              class="form-control"
-              id="price"
-              placeholder="{{ course.price }}"
-            />
+          <div class=" form-group col-md-6">
+            <input type="number" class="form-control" id="price" formControlName="price" placeholder="Price"   name="price"   [(ngModel)]="course.price"/>
+            <span class="help-block" *ngIf="courseEditForm.get('price').hasError('required') && courseEditForm.get('price').touched">Price is required</span>
+            
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Save</button>
+        <div class="form-row">
+          
+          <button type="submit" class="btn  btn-primary" [disabled]="!courseEditForm.valid"> Save </button>
+                                    |
+          <button type="button" class="btn  btn-secondary"    routerLink="/course">Cancel</button>
+        </div>
+ <!-- <h6>{{courseEditForm.value|json}}</h6>
+        <h6>{{courseEditForm.status|json}}</h6>
+        <h6>{{course|json}}</h6>-->
       </form>
     </div>
   </div>

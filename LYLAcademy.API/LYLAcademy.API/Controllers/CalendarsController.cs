@@ -25,14 +25,14 @@ namespace LYLAcademy.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendars()
         {
-            return await _context.Calendars.ToListAsync();
+            return await _context.Calendars.Include(c=>c.Course).Include(t=>t.Teacher).ToListAsync();
         }
 
         // GET: api/Calendars/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Calendar>> GetCalendar(int id)
         {
-            var calendar = await _context.Calendars.FindAsync(id);
+            var calendar = await _context.Calendars.Include(c => c.Course).Include(t => t.Teacher).FirstOrDefaultAsync(calendar=> calendar.CalendarId == id);
 
             if (calendar == null)
             {

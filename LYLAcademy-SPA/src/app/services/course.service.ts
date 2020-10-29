@@ -27,7 +27,7 @@ export class CourseService {
   add(course) {
     this.httpClient.post(this.path + 'courses', course).subscribe((data) => {
       this.alertifyService.success('Course creation is successful!');
-      this.router.navigateByUrl('courseDetail/'+data['courseId']);
+      this.router.navigateByUrl('/course');
     });
   }
 

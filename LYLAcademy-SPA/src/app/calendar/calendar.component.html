@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1> </h1>
+       <button type="button" routerLink="/calendarAdd"  class="btn btn-sm btn-outline-primary">
+        Add New Calendar
+       </button>
+       <hr/>
+      </div>
+  </div>
+  <div class="row"> 
+    <div *ngFor="let calendar of calendars" class="col-md-3">
+      <div class="card mb-4 shadow-sm">
+        <svg
+          class="bd-placeholder-img card-img-top"
+          width="100%"
+          height="100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+          aria-label="Placeholder: Thumbnail"
+        >
+          <title>{{calendar.course.name}}</title>
+          <rect width="100%" height="100%" fill="#adb5bd" />
+          <text style="text-transform:uppercase" x="30%" y="50%" fill="#eceeef" dy=".3em">{{calendar.course.name}}</text>
+        </svg>
+        <div class="card-body">
+          <p class="card-text">{{calendar.courseContent}}
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(calendar.calendarId)">
+                Delete
+              </button>
+              <button type="button" routerLink="/calendarDetail/{{calendar.calendarId}}" class="btn btn-sm btn-outline-secondary">
+                Edit
+              </button>
+            </div>
+            <small class="text-muted">{{calendar.course.duration}}  - {{calendar.price}} TL</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

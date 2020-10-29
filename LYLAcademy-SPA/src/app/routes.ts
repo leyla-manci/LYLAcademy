@@ -13,6 +13,9 @@ import { StudentAddComponent } from './student/student-add/student-add.component
 import { TeacherComponent } from './teacher/teacher.component';
 import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.component';
 import { TeacherAddComponent } from './teacher/teacher-add/teacher-add.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-detail.component';
+import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
 
 export const appRoutes: Routes = [
   { path: 'course', component: CourseComponent },
@@ -28,7 +31,9 @@ export const appRoutes: Routes = [
   { path: 'studentDetail/:studentId', component: StudentDetailComponent },
   { path: 'studentAdd', component: StudentAddComponent },
   { path: 'participant', component: CourseComponent },
-  { path: 'calendar', component: CourseComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'calendarDetail/:calendarId', component: CalendarDetailComponent },
+  { path: 'calendarAdd', component: CalendarAddComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
