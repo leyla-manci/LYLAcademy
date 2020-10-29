@@ -15,19 +15,18 @@ import { UserService } from 'src/app/services/user.service';
   selector: 'app-student-add',
   templateUrl: './student-add.component.html',
   styleUrls: ['./student-add.component.scss'],
-  providers:[StudentService]
+  providers: [StudentService],
 })
 export class StudentAddComponent implements OnInit {
-
   constructor(
     private studentService: StudentService,
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private alertifyService:AlertifyService
+    private alertifyService: AlertifyService
   ) {}
   student: Student = new Student();
   studentAddForm: FormGroup;
-   users : UserName[];
+  users: UserName[];
 
   createStudentForm() {
     this.studentAddForm = this.formBuilder.group({
@@ -38,20 +37,16 @@ export class StudentAddComponent implements OnInit {
       phone: ['', Validators.required],
       address: ['', Validators.required],
     });
-
-  
   }
   ngOnInit() {
-    this.getUserNameList()
+    this.getUserNameList();
     this.student.isDelete = 0;
     this.createStudentForm();
-  
   }
-  getUserNameList(){
-    this.userService.getUserByType(1).subscribe(data=>{
+  getUserNameList() {
+    this.userService.getUserByType(1).subscribe((data) => {
       this.users = data;
     });
-
   }
 
   add() {
@@ -60,5 +55,4 @@ export class StudentAddComponent implements OnInit {
       this.studentService.add(this.student);
     }
   }
-
 }

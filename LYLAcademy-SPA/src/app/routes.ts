@@ -10,6 +10,9 @@ import { UserComponent } from './user/user.component';
 import { StudentComponent } from './student/student.component';
 import { StudentDetailComponent } from './student/student-detail/student-detail.component';
 import { StudentAddComponent } from './student/student-add/student-add.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.component';
+import { TeacherAddComponent } from './teacher/teacher-add/teacher-add.component';
 
 export const appRoutes: Routes = [
   { path: 'course', component: CourseComponent },
@@ -18,7 +21,9 @@ export const appRoutes: Routes = [
   { path: 'user', component: UserComponent },
   { path: 'userDetail/:userId', component: UserDetailComponent },
   { path: 'userAdd', component: UserAddComponent },
-  { path: 'teacher', component: CourseComponent },
+  { path: 'teacher', component: TeacherComponent },
+  { path: 'teacherDetail/:teacherId', component: TeacherDetailComponent },
+  { path: 'teacherAdd', component: TeacherAddComponent },
   { path: 'student', component: StudentComponent },
   { path: 'studentDetail/:studentId', component: StudentDetailComponent },
   { path: 'studentAdd', component: StudentAddComponent },

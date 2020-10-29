@@ -1,0 +1,59 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="teacherEditForm" (ngSubmit)="save()">
+        <input hidden type="text" class="form-control" id="teacherId" formControlName="teacherId"  name="teacherId"   [(ngModel)]="teacher.teacherId"/>
+        <input hidden type="text" class="form-control" id="isDelete" formControlName="isDelete"  name="isDelete"   [(ngModel)]="teacher.isDelete"/>
+        <h4 class="mt-3 pt-3">Edit teacher</h4>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="teacher Name" autofocus   name="name"   [(ngModel)]="teacher.name"/>
+            <span class="help-block" *ngIf="teacherEditForm.get('name').hasError('required') && teacherEditForm.get('name').touched">Teacher Name is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="surname" formControlName="surname" placeholder="Surname"   name="surname"   [(ngModel)]="teacher.surname" />
+            <span class="help-block" *ngIf="teacherEditForm.get('surname').hasError('required') && teacherEditForm.get('surname').touched">Surname is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <select formControlName="userName"  class="form-control" id="userName"  name="userName"   [(ngModel)]="teacher.userName" >
+              <option  value=""> Select User Name            
+              </option>
+              <option  [value]="user.name" *ngFor="let user of users">             {{user.name}}              
+              </option>
+            </select>
+            <span class="help-block" *ngIf="teacherEditForm.get('userName').hasError('required') && teacherEditForm.get('userName').touched">User name is required</span>
+         
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="qualification" formControlName="qualification" placeholder="Qualification"  name="qualification"   [(ngModel)]="teacher.qualification" />
+            <span class="help-block" *ngIf="teacherEditForm.get('qualification').hasError('required') && teacherEditForm.get('qualification').touched">Qualification is required</span>
+             
+          </div>
+        </div>
+   
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="compBranch" formControlName="compBranch" placeholder="Comp. Branch"   name="compBranch"   [(ngModel)]="teacher.compBranch"/>
+            <span class="help-block" *ngIf="teacherEditForm.get('compBranch').hasError('required') && teacherEditForm.get('compBranch').touched">Comp. Branch is required</span>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          
+          <button type="submit" class="btn  btn-primary" [disabled]="!teacherEditForm.valid"> Save </button>
+                                    |
+          <button type="button" class="btn  btn-secondary"    routerLink="/teacher">Cancel</button>
+        </div>
+  <!-- <h6>{{teacherEditForm.value|json}}</h6>
+        <h6>{{teacherEditForm.status|json}}</h6>
+        <h6>{{teacher|json}}</h6>-->
+      </form>
+    </div>
+  </div>
+</main>

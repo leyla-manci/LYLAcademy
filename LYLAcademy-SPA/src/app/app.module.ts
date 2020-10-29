@@ -20,9 +20,12 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { StudentComponent } from './student/student.component';
 import { StudentAddComponent } from './student/student-add/student-add.component';
 import { StudentDetailComponent } from './student/student-detail/student-detail.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { TeacherAddComponent } from './teacher/teacher-add/teacher-add.component';
+import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
     NavComponent,
     CourseComponent,
@@ -33,10 +36,13 @@ import { StudentDetailComponent } from './student/student-detail/student-detail.
     UserComponent,
     UserAddComponent,
     UserDetailComponent,
-      StudentComponent,
-      StudentAddComponent,
-      StudentDetailComponent
-   ],
+    StudentComponent,
+    StudentAddComponent,
+    StudentDetailComponent,
+    TeacherComponent,
+    TeacherAddComponent,
+    TeacherDetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

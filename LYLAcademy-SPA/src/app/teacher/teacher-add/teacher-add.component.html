@@ -1,0 +1,55 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="teacherAddForm" (ngSubmit)="add()">
+        <h4 class="mt-3 pt-3">Add New Teacher</h4>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Teacher Name" autofocus />
+            <span class="help-block" *ngIf="teacherAddForm.get('name').hasError('required') && teacherAddForm.get('name').touched">Teacher Name is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="surname" formControlName="surname" placeholder="Surname"  />
+            <span class="help-block" *ngIf="teacherAddForm.get('surname').hasError('required') && teacherAddForm.get('surname').touched">Surname is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <select formControlName="userName"  class="form-control" id="userName" >
+              <option  value="" selected> Select User Name            
+              </option>
+              <option  [value]="user.name" *ngFor="let user of users">             {{user.name}}              
+              </option>
+            </select>
+            <span class="help-block" *ngIf="teacherAddForm.get('userName').hasError('required') && teacherAddForm.get('userName').touched">User name is required</span>
+         
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="qualification" formControlName="qualification" placeholder="Qualification"  />
+            <span class="help-block" *ngIf="teacherAddForm.get('qualification').hasError('required') && teacherAddForm.get('qualification').touched">Qualification is required</span>
+             
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="compBranch" formControlName="compBranch" placeholder="Comp. Branch"  />
+            <span class="help-block" *ngIf="teacherAddForm.get('compBranch').hasError('required') && teacherAddForm.get('compBranch').touched">Comp. Branch is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          
+          <button type="submit" class="btn  btn-primary" [disabled]="!teacherAddForm.valid"> Add </button>
+                                    |
+          <button type="submit" class="btn  btn-secondary"    routerLink="/teacher">Cancel</button>
+        </div>
+       <!-- <h6>{{teacherAddForm.value|json}}</h6>
+        <h6>{{teacherAddForm.status|json}}</h6>-->
+        
+      </form>
+    </div>
+  </div>
+</main>

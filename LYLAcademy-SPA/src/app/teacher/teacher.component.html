@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1></h1>
+      <button
+        type="button"
+        routerLink="/teacherAdd"
+        class="btn btn-sm btn-outline-primary"
+      >
+        Add New Teacher
+      </button>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Teacher Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Sur Name</th>
+          <th scope="col">User Name</th>
+          <th scope="col">Qualification</th>
+          <th scope="col">Competence Branch</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let teacher of teachers">
+          <th scope="row">{{ teacher.teacherId }}</th>
+          <td>{{ teacher.name }}</td>
+          <td>{{ teacher.surname }}</td>
+          <td>
+            {{ teacher.userName }}
+           
+          </td>
+          <td>{{ teacher.qualification }}
+          </td>
+          <td>{{ teacher.compBranch }}
+          </td>
+          <td>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(teacher.teacherId)">
+              Delete
+            </button>
+            |
+            <button
+              type="button"
+              routerLink="/teacherDetail/{{ teacher.teacherId }}"
+              class="btn btn-sm btn-outline-secondary"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

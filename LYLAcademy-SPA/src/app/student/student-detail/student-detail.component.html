@@ -1,3 +1,65 @@
-<p>
-  student-detail works!
-</p>
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="studentEditForm" (ngSubmit)="save()">
+        <input hidden type="text" class="form-control" id="studentId" formControlName="studentId"  name="studentId"   [(ngModel)]="student.studentId"/>
+        <input hidden type="text" class="form-control" id="isDelete" formControlName="isDelete"  name="isDelete"   [(ngModel)]="student.isDelete"/>
+        <h4 class="mt-3 pt-3">Edit student</h4>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Student Name" autofocus   name="name"   [(ngModel)]="student.name"/>
+            <span class="help-block" *ngIf="studentEditForm.get('name').hasError('required') && studentEditForm.get('name').touched">Student Name is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="surname" formControlName="surname" placeholder="Surname"   name="surname"   [(ngModel)]="student.surname" />
+            <span class="help-block" *ngIf="studentEditForm.get('surname').hasError('required') && studentEditForm.get('surname').touched">Surname is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <select formControlName="userName"  class="form-control" id="userName"  name="userName"   [(ngModel)]="student.userName" >
+              <option  value=""> Select User Name            
+              </option>
+              <option  [value]="user.name" *ngFor="let user of users">             {{user.name}}              
+              </option>
+            </select>
+            <span class="help-block" *ngIf="studentEditForm.get('userName').hasError('required') && studentEditForm.get('userName').touched">User name is required</span>
+         
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="email" formControlName="email" placeholder="E-mail"  name="email"   [(ngModel)]="student.email" />
+            <span class="help-block" *ngIf="studentEditForm.get('email').hasError('required') && studentEditForm.get('email').touched">E-mail is required</span>
+             
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone"   name="phone"   [(ngModel)]="student.phone"/>
+            <span class="help-block" *ngIf="studentEditForm.get('phone').hasError('required') && studentEditForm.get('phone').touched">Phone is required</span>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="address" formControlName="address" placeholder="Address"   name="address"   [(ngModel)]="student.address"/>
+            <span class="help-block" *ngIf="studentEditForm.get('address').hasError('required') && studentEditForm.get('address').touched">Address is required</span>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          
+          <button type="submit" class="btn  btn-primary" [disabled]="!studentEditForm.valid"> Save </button>
+                                    |
+          <button type="button" class="btn  btn-secondary"    routerLink="/student">Cancel</button>
+        </div>
+  <!-- <h6>{{studentEditForm.value|json}}</h6>
+        <h6>{{studentEditForm.status|json}}</h6>
+        <h6>{{student|json}}</h6>-->
+      </form>
+    </div>
+  </div>
+</main>
