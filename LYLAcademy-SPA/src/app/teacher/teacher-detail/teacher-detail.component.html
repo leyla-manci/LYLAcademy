@@ -33,7 +33,9 @@
           <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="qualification" formControlName="qualification" placeholder="Qualification"  name="qualification"   [(ngModel)]="teacher.qualification" />
             <span class="help-block" *ngIf="teacherEditForm.get('qualification').hasError('required') && teacherEditForm.get('qualification').touched">Qualification is required</span>
-             
+            <span class="help-block" *ngIf="teacherEditForm.get('qualification').hasError('maxlength') && teacherEditForm.get('qualification').touched">
+              Qualification maxlength 10
+            </span>
           </div>
         </div>
    
@@ -41,7 +43,9 @@
           <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="compBranch" formControlName="compBranch" placeholder="Comp. Branch"   name="compBranch"   [(ngModel)]="teacher.compBranch"/>
             <span class="help-block" *ngIf="teacherEditForm.get('compBranch').hasError('required') && teacherEditForm.get('compBranch').touched">Comp. Branch is required</span>
-            
+            <span class="help-block" *ngIf="teacherEditForm.get('compBranch').hasError('maxlength') && teacherEditForm.get('compBranch').touched">
+              Branch maxlength 10
+            </span>
           </div>
         </div>
         <div class="form-row">

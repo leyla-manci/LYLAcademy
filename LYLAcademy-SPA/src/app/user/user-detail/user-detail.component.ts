@@ -26,13 +26,20 @@ export class UserDetailComponent implements OnInit {
 
   createUserForm() {
     this.userEditForm = this.formBuilder.group({
-      userId:[this.user.userId],
+      userId: [this.user.userId],
       name: [this.user.name, Validators.required],
-      password: [this.user.password, Validators.required],
+      password: [
+        this.user.password,
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(10),
+        ],
+      ],
       isTeacher: [this.user.isTeacher, Validators.required],
       isStudent: [this.user.isStudent, Validators.required],
       isAdmin: [this.user.isAdmin, Validators.required],
-      isDelete:[this.user.isDelete]
+      isDelete: [this.user.isDelete],
     });
   }
   ngOnInit() {
@@ -44,7 +51,7 @@ export class UserDetailComponent implements OnInit {
 
   save() {
     if (this.userEditForm.valid) {
-     // this.user = Object.assign({}, this.userEditForm.value);
+      // this.user = Object.assign({}, this.userEditForm.value);
       this.userService.save(this.user);
     }
   }

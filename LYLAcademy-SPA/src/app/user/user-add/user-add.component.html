@@ -13,6 +13,12 @@
           <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="password" formControlName="password" placeholder="User password"  />
             <span class="help-block" *ngIf="userAddForm.get('password').hasError('required') && userAddForm.get('password').touched">User password is required</span>
+            <span class="help-block" *ngIf="userAddForm.get('password').hasError('minlength') && userAddForm.get('password').touched">
+              Password minlength 4
+            </span>
+            <span class="help-block" *ngIf="userAddForm.get('password').hasError('maxlength') && userAddForm.get('password').touched">
+              Password maxlength 10
+            </span>
           </div>
         </div>
         <div class="form-row">

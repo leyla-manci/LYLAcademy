@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
   selector: 'app-user-add',
   templateUrl: './user-add.component.html',
   styleUrls: ['./user-add.component.scss'],
-  providers: [UserService]
+  providers: [UserService],
 })
 export class UserAddComponent implements OnInit {
   constructor(
@@ -25,13 +25,18 @@ export class UserAddComponent implements OnInit {
   createUserForm() {
     this.userAddForm = this.formBuilder.group({
       name: ['', Validators.required],
-      password: ['', Validators.required],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(4),
+          Validators.maxLength(10),
+        ],
+      ],
       isTeacher: [this.user.isTeacher, Validators.required],
       isStudent: [this.user.isStudent, Validators.required],
       isAdmin: [this.user.isAdmin, Validators.required],
     });
-
-  
   }
   ngOnInit() {
     this.user.isAdmin = 1;
@@ -39,7 +44,6 @@ export class UserAddComponent implements OnInit {
     this.user.isStudent = 0;
     this.user.isTeacher = 0;
     this.createUserForm();
-  
   }
 
   add() {

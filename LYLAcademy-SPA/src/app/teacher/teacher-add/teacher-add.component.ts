@@ -30,11 +30,11 @@ export class TeacherAddComponent implements OnInit {
 
   createTeacherForm() {
     this.teacherAddForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      surname: ['', Validators.required],
-      userName: ['', Validators.required],
-      qualification: ['', Validators.required],
-      compBranch: ['', Validators.required],
+      name: ['', [Validators.required, Validators.maxLength(50)]],
+      surname: ['', [Validators.required, Validators.maxLength(50)]],
+      userName: ['', [Validators.required, Validators.maxLength(50)]],
+      qualification: ['', [Validators.required, Validators.maxLength(10)]],
+      compBranch: ['', [Validators.required, Validators.maxLength(10)]],
     });
   }
   ngOnInit() {

@@ -30,4 +30,19 @@ export class CourseService {
       this.router.navigateByUrl('courseDetail/'+data['courseId']);
     });
   }
+
+  save(course){
+    this.httpClient.put(this.path + 'courses/'+course.courseId,course).subscribe((data) => { 
+      this.router.navigateByUrl('/course');
+      this.alertifyService.success('course updated!');
+    },
+    (error) => {
+        this.alertifyService.notify('Update process  failed.'+error, 'error');
+      
+    });
+  }
+  delete(courseId){
+    return this.httpClient.delete(this.path + 'courses/'+courseId);
+  }
+
 }

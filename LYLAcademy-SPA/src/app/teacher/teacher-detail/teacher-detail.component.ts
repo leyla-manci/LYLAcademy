@@ -36,8 +36,8 @@ export class TeacherDetailComponent implements OnInit {
       name: ['', Validators.required],
       surname: ['', Validators.required],
       userName: ['', Validators.required],
-      qualification: ['', Validators.required],
-      compBranch: ['', Validators.required],
+      qualification: ['',  [Validators.required, Validators.maxLength(10)]],
+      compBranch: ['',  [Validators.required, Validators.maxLength(10)]],
       isDelete: [this.teacher.isDelete],
     });
   }

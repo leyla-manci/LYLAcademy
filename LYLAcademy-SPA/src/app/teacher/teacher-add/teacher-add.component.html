@@ -31,13 +31,18 @@
           <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="qualification" formControlName="qualification" placeholder="Qualification"  />
             <span class="help-block" *ngIf="teacherAddForm.get('qualification').hasError('required') && teacherAddForm.get('qualification').touched">Qualification is required</span>
-             
+            <span class="help-block" *ngIf="teacherAddForm.get('qualification').hasError('maxlength') && teacherAddForm.get('qualification').touched">
+              Qualification maxlength 10
+            </span>
           </div>
         </div>
         <div class="form-row">
           <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="compBranch" formControlName="compBranch" placeholder="Comp. Branch"  />
             <span class="help-block" *ngIf="teacherAddForm.get('compBranch').hasError('required') && teacherAddForm.get('compBranch').touched">Comp. Branch is required</span>
+            <span class="help-block" *ngIf="teacherAddForm.get('compBranch').hasError('maxlength') && teacherAddForm.get('compBranch').touched">
+              Branch maxlength 10
+            </span>
           </div>
         </div>
         <div class="form-row">

@@ -16,6 +16,12 @@
           <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="password" formControlName="password" placeholder="User password"   name="password"   [(ngModel)]="user.password" />
             <span class="help-block" *ngIf="userEditForm.get('password').hasError('required') && userEditForm.get('password').touched">User password is required</span>
+            <span class="help-block" *ngIf="userEditForm.get('password').hasError('minlength') && userEditForm.get('password').touched">
+              Password minlength 4
+            </span>
+            <span class="help-block" *ngIf="userEditForm.get('password').hasError('maxlength') && userEditForm.get('password').touched">
+              Password maxlength 10
+            </span>
           </div>
         </div>
         <div class="form-row">
