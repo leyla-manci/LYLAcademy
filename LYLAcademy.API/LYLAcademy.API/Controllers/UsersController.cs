@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LYLAcademy.API.Data;
 using LYLAcademy.API.Models;
+using AutoMapper;
+using LYLAcademy.API.Dtos;
 
 namespace LYLAcademy.API.Controllers
 {
@@ -15,10 +17,12 @@ namespace LYLAcademy.API.Controllers
     public class UsersController : ControllerBase
     {
         private readonly DataContext _context;
+        private readonly IMapper _mapper;
 
-        public UsersController(DataContext context)
+        public UsersController(DataContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Users
@@ -55,6 +59,27 @@ namespace LYLAcademy.API.Controllers
             }
 
             return user;
+        }
+
+        // GET: api/Users/byType/0
+        [HttpGet("byType/{type}")]
+        public ActionResult<IEnumerable<UserNameDto>> GetUserNameList(int type)
+        {
+            //userType 0:admin 1:student 2:teacher
+            var user = new List<User>();
+            user = type switch
+            {
+                2 => _context.Users.Where(user => user.IsTeacher == 1).ToList<User>(),
+                1 => _context.Users.Where(user => user.IsStudent == 1).ToList<User>(),
+                _ => _context.Users.Where(user => user.IsAdmin == 1).ToList<User>(),
+            };
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var userNameDTO = _mapper.Map<List<UserNameDto>>(user);
+            return userNameDTO;
         }
 
         // PUT: api/Users/5

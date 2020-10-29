@@ -17,9 +17,12 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { UserAddComponent } from './user/user-add/user-add.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { StudentComponent } from './student/student.component';
+import { StudentAddComponent } from './student/student-add/student-add.component';
+import { StudentDetailComponent } from './student/student-detail/student-detail.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     NavComponent,
     CourseComponent,
@@ -30,7 +33,10 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     UserComponent,
     UserAddComponent,
     UserDetailComponent,
-  ],
+      StudentComponent,
+      StudentAddComponent,
+      StudentDetailComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

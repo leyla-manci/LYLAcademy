@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserAddComponent } from './user/user-add/user-add.component';
 import { UserComponent } from './user/user.component';
+import { StudentComponent } from './student/student.component';
+import { StudentDetailComponent } from './student/student-detail/student-detail.component';
+import { StudentAddComponent } from './student/student-add/student-add.component';
 
 export const appRoutes: Routes = [
   { path: 'course', component: CourseComponent },
@@ -16,7 +19,9 @@ export const appRoutes: Routes = [
   { path: 'userDetail/:userId', component: UserDetailComponent },
   { path: 'userAdd', component: UserAddComponent },
   { path: 'teacher', component: CourseComponent },
-  { path: 'student', component: CourseComponent },
+  { path: 'student', component: StudentComponent },
+  { path: 'studentDetail/:studentId', component: StudentDetailComponent },
+  { path: 'studentAdd', component: StudentAddComponent },
   { path: 'participant', component: CourseComponent },
   { path: 'calendar', component: CourseComponent },
   { path: 'login', component: LoginComponent },

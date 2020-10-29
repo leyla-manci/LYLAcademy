@@ -13,6 +13,7 @@ namespace LYLAcademy.API.Helpers
        public AutoMapperProfiles()
         {
             CreateMap<Student, StudentDto>();
+            CreateMap<User, UserNameDto>();
         }
     }
 }

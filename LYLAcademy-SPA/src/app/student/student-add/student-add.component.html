@@ -1,0 +1,63 @@
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="studentAddForm" (ngSubmit)="add()">
+        <h4 class="mt-3 pt-3">Add New Student</h4>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Student Name" autofocus />
+            <span class="help-block" *ngIf="studentAddForm.get('name').hasError('required') && studentAddForm.get('name').touched">Student Name is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="surname" formControlName="surname" placeholder="Surname"  />
+            <span class="help-block" *ngIf="studentAddForm.get('surname').hasError('required') && studentAddForm.get('surname').touched">Surname is required</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <select formControlName="userName"  class="form-control" id="userName" >
+              <option  value="" selected> Select User Name            
+              </option>
+              <option  [value]="user.name" *ngFor="let user of users">             {{user.name}}              
+              </option>
+            </select>
+            <span class="help-block" *ngIf="studentAddForm.get('userName').hasError('required') && studentAddForm.get('userName').touched">User name is required</span>
+         
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="email" formControlName="email" placeholder="E-mail"  />
+            <span class="help-block" *ngIf="studentAddForm.get('email').hasError('required') && studentAddForm.get('email').touched">E-mail is required</span>
+             
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Phone"  />
+            <span class="help-block" *ngIf="studentAddForm.get('phone').hasError('required') && studentAddForm.get('phone').touched">Phone is required</span>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="address" formControlName="address" placeholder="Address"  />
+            <span class="help-block" *ngIf="studentAddForm.get('address').hasError('required') && studentAddForm.get('address').touched"><Address></Address> is required</span>
+            
+          </div>
+        </div>
+        <div class="form-row">
+          
+          <button type="submit" class="btn  btn-primary" [disabled]="!studentAddForm.valid"> Add </button>
+                                    |
+          <button type="submit" class="btn  btn-secondary"    routerLink="/student">Cancel</button>
+        </div>
+       <!-- <h6>{{studentAddForm.value|json}}</h6>
+        <h6>{{studentAddForm.status|json}}</h6>-->
+        
+      </form>
+    </div>
+  </div>
+</main>

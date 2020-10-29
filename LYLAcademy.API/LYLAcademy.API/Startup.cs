@@ -37,7 +37,7 @@ namespace LYLAcademy.API
             x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
            
             services.AddControllers();
-           // services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
             services.AddMvc().AddNewtonsoftJson(opt => {
                 opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });

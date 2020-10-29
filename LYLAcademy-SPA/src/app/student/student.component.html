@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1></h1>
+      <button
+        type="button"
+        routerLink="/studentAdd"
+        class="btn btn-sm btn-outline-primary"
+      >
+        Add New Student
+      </button>
+      <hr />
+    </div>
+  </div>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Student Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Sur Name</th>
+          <th scope="col">User Name</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Phone</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <th scope="row">{{ student.studentId }}</th>
+          <td>{{ student.name }}</td>
+          <td>{{ student.surname }}</td>
+          <td>
+            {{ student.userName }}
+           
+          </td>
+          <td>{{ student.email }}
+          </td>
+          <td>{{ student.phone }}
+          </td>
+          <td>
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(student.studentId)">
+              Delete
+            </button>
+            |
+            <button
+              type="button"
+              routerLink="/studentDetail/{{ student.studentId }}"
+              class="btn btn-sm btn-outline-secondary"
+            >
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

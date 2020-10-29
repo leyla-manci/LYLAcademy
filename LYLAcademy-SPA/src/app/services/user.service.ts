@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
+import { UserName } from '../models/UserName';
 import { AlertifyService } from './alertify.service';
 
 @Injectable({
@@ -23,6 +24,12 @@ constructor(
   }
   getUserById(userId): Observable<User> {
     return this.httpClient.get<User>(this.path + 'users/' + userId);
+  }
+
+
+  getUserByType(userType): Observable<UserName[]> {
+    //userType 0:admin 1:student 2:teacher
+    return this.httpClient.get<UserName[]>(this.path + 'users/byType/' + userType);
   }
 
   add(user) {
