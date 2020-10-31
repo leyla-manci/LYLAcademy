@@ -40,6 +40,14 @@ export class CalendarComponent implements OnInit {
   get isAuthenticated() {
     return this.authService.loggedIn();
   }
+   
+  get isAdminUser() {
+    return this.authService.isAdmin();
+  }
+  get isTeacherUser() {
+    return this.authService.isTeacher();
+  }
+
   delete(calendarId) {
     this.calendarService.delete(calendarId).subscribe(
       (data) => {

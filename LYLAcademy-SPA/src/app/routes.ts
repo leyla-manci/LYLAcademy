@@ -16,6 +16,7 @@ import { TeacherAddComponent } from './teacher/teacher-add/teacher-add.component
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-detail.component';
 import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
+import { NavComponent } from './nav/nav.component';
 
 export const appRoutes: Routes = [
   { path: 'course', component: CourseComponent },

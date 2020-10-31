@@ -61,9 +61,12 @@ namespace LYLAcademy.API.Controllers
 
             var tokenDescriptor = new SecurityTokenDescriptor {
                 Subject = new ClaimsIdentity(new Claim[] { 
-                    new Claim(ClaimTypes.NameIdentifier,user.UserId.ToString()),
-                    new Claim(ClaimTypes.Name,user.Name)
-                
+                    new Claim("nameId",user.UserId.ToString()),
+                    new Claim("userName",user.Name),
+                    new Claim("isAdmin",user.IsAdmin.ToString()),
+                    new Claim("isStudent",user.IsStudent.ToString()),
+                    new Claim("isTeacher",user.IsTeacher.ToString())
+
                 }),
                 Expires = DateTime.Now.AddDays(1),
                 SigningCredentials = new SigningCredentials( new SymmetricSecurityKey(key)

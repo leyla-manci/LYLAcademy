@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
-    private router: Router,    
+    private router: Router,
     private alertifyService: AlertifyService
   ) {}
 
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit() {
+  
     if (this.isAuthenticated) {
       this.router.navigateByUrl('/home');
     } else {
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginUser);
     }
   }
+
   get isAuthenticated() {
     return this.authService.loggedIn();
   }
