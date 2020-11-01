@@ -1,4 +1,5 @@
 import { Course } from './Course';
+import { Participant } from './Participant';
 import { Teacher } from './Teacher';
 
 export class Calendar {
@@ -12,8 +13,11 @@ export class Calendar {
     createDate: Date;
     updateDate: Date;
     startDate: Date;
+    endDateStr: string;
+    startDateStr: string;
     endDate: Date;
     course: Course;
     teacher:Teacher;   
+    participants:Participant[];
     isDelete:number;
 }

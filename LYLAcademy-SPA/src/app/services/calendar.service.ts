@@ -25,7 +25,12 @@ export class CalendarService {
     getCalendarById(calendarId): Observable<Calendar> {
       return this.httpClient.get<Calendar>(this.path + 'Calendars/' + calendarId);
     }
-  
+    getParticipantCalendar(participantId): Observable<Calendar[]> {
+      return this.httpClient.get<Calendar[]>(this.path + 'Calendars/byParticipant/' + participantId);
+    }
+    getCalendarToJoin(participantId): Observable<Calendar[]> {
+      return this.httpClient.get<Calendar[]>(this.path + 'Calendars/toJoin/' + participantId);
+    }
     add(calendar) {
       this.httpClient.post(this.path + 'Calendars', calendar).subscribe((data) => {
       this.router.navigateByUrl('/calendar');
@@ -49,5 +54,7 @@ export class CalendarService {
     delete(calendarId){
       return this.httpClient.delete(this.path + 'Calendars/'+calendarId);
     }
+
+   
 
 }

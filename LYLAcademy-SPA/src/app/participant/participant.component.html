@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="row">
+    <div class="row col-md-12">
+      <h6></h6>
+        </div>
+    <div class="row col-md-12">
+      <div class="col-md-3">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary"
+          (click)="showMyList()"
+        >
+          <i class="fas fa fa-list pr-2" aria-hidden="true"></i> My Course List
+        </button>
+      </div>
+      <div class="col-md-3">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary"
+          (click)="showOtherList()"
+        >
+          <i class="fas fa fa-calendar pr-2" aria-hidden="true"></i> Other
+          Course List
+        </button>
+      </div>
+      <div class="col-md-3">
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="isShowExpiredAlso"
+            [(ngModel)]="isShowExpiredAlso"
+          />
+          <label class="custom-control-label" for="isShowExpiredAlso">
+            Show Expired Courses Also
+          </label>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div *ngFor="let calendar of calendars" class="col-md-3">
+
+      <div class="card mb-4 shadow-sm">
+        <svg
+          class="bd-placeholder-img card-img-top"
+          width="100%"
+          height="70"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+          aria-label="Placeholder: Thumbnail"
+        >
+          <title>{{ calendar.course.name }}</title>
+          <rect width="100%" height="100%" fill="#adb5bd" />
+          <text
+            style="text-transform: uppercase"
+            x="30%"
+            y="50%"
+            fill="#eceeef"
+            dy=".3em"
+          >
+            {{ calendar.course.name }} 
+          </text>
+        </svg>
+        <div class="card-body">
+          <small class="text-muted"
+          >{{ calendar.startDateStr }} - {{ calendar.endDateStr }}  </small>
+      
+          <p class="card-text">{{ calendar.courseContent }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a
+              *ngIf="!showOtherCourseList"
+              class="fas fa fa-edit pr-2"
+              routerLink="/participantDetail/{{student.studentId}}" 
+            >
+            </a>
+              <a
+                *ngIf="showOtherCourseList"
+                class="fas fa fa-eye pr-2"
+                routerLink="/participantShow/{{student.studentId}}" 
+              >
+          </a>
+              <a
+              *ngIf="showOtherCourseList"
+              class="fas fa fa-users pr-2"
+              (click)="joinCourse(calendar.calendarId,calendar.price)"
+            >
+        </a>
+            </div>
+            <small class="text-muted"
+              >    {{calendar.teacher.name}} {{calendar.teacher.surname}} </small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

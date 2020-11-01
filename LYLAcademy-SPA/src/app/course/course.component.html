@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-md-12">
       <h1> </h1>
-       <button type="button" routerLink="/courseAdd"  class="btn btn-sm btn-outline-primary">
+       <a  routerLink="/courseAdd"  class="fa fa-plus">
         Add New Course
-       </button>
+       </a>
        <hr/>
       </div>
   </div>
@@ -30,12 +30,12 @@
           </p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(course.courseId)">
-                Delete
-              </button>
-              <button type="button" routerLink="/courseDetail/{{course.courseId}}" class="btn btn-sm btn-outline-secondary">
-                Edit
-              </button>
+              <div class="row col-md-12">
+                <div class="col-md-4">
+                  <a  class="fa fa-trash" (click)="delete(course.courseId)"></a></div>
+                <div class="col-md-4"> <a  routerLink="/courseDetail/{{course.courseId}}" class="fa fa-edit"></a></div>
+                <div class="col-md-4"></div>
+              </div>             
             </div>
             <small class="text-muted">{{course.duration}}  - {{course.price}} TL</small>
           </div>

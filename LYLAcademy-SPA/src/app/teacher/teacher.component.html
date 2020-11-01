@@ -2,13 +2,12 @@
   <div class="row">
     <div class="col-md-12">
       <h1></h1>
-      <button
-        type="button"
+      <a
         routerLink="/teacherAdd"
-        class="btn btn-sm btn-outline-primary"
+        class="fa fa-plus"
       >
         Add New Teacher
-      </button>
+    </a>
       <hr />
     </div>
   </div>
@@ -39,18 +38,14 @@
           <td>{{ teacher.compBranch }}
           </td>
           <td>
-            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(teacher.teacherId)">
-              Delete
-            </button>
-            |
-            <button
-              type="button"
-              routerLink="/teacherDetail/{{ teacher.teacherId }}"
-              class="btn btn-sm btn-outline-secondary"
-            >
-              Edit
-            </button>
-          </td>
+              <div class="row col-md-12">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                  <a class="fa fa-trash" (click)="delete(teacher.teacherId)">        </a></div>
+                <div class="col-md-4">
+                  <a  routerLink="/teacherDetail/{{ teacher.teacherId }}"   class="fa fa-edit" >  </a></div>
+              </div>
+           </td>
         </tr>
       </tbody>
     </table>

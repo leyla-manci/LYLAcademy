@@ -2,13 +2,12 @@
   <div class="row">
     <div class="col-md-12">
       <h1></h1>
-      <button
-        type="button"
+      <a
         routerLink="/studentAdd"
-        class="btn btn-sm btn-outline-primary"
+        class="fa fa-plus"
       >
         Add New Student
-      </button>
+    </a>
       <hr />
     </div>
   </div>
@@ -39,17 +38,12 @@
           <td>{{ student.phone }}
           </td>
           <td>
-            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(student.studentId)">
-              Delete
-            </button>
-            |
-            <button
-              type="button"
-              routerLink="/studentDetail/{{ student.studentId }}"
-              class="btn btn-sm btn-outline-secondary"
-            >
-              Edit
-            </button>
+            
+            <div class="row col-md-12">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">   <a class="fa fa-trash" (click)="delete(student.studentId)"> </a></div>
+              <div class="col-md-4"><a  routerLink="/studentDetail/{{ student.studentId }}"   class="fa fa-edit"    ></a></div>
+             </div>    
           </td>
         </tr>
       </tbody>

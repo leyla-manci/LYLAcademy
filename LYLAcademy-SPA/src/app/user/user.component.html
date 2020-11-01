@@ -2,13 +2,12 @@
   <div class="row">
     <div class="col-md-12">
       <h1></h1>
-      <button
-        type="button"
+      <a
         routerLink="/userAdd"
-        class="btn btn-sm btn-outline-primary"
+        class="fa fa-plus"
       >
         Add New User
-      </button>
+    </a>
       <hr />
     </div>
   </div>
@@ -64,18 +63,12 @@
             </select>
           </td>
           <td>
-            <button type="button" class="btn btn-sm btn-outline-secondary" (click)="delete(user.userId)">
-              Delete
-            </button>
-            |
-            <button
-              type="button"
-              routerLink="/userDetail/{{ user.userId }}"
-              class="btn btn-sm btn-outline-secondary"
-            >
-              Edit
-            </button>
-          </td>
+              <div class="row col-md-12">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><a class="fa fa-trash" (click)="delete(user.userId)"></a></div>
+                <div class="col-md-4"> <a routerLink="/userDetail/{{ user.userId }}" class="fa fa-edit" > </a></div>
+              </div>
+           </td>
         </tr>
       </tbody>
     </table>

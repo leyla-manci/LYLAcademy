@@ -26,9 +26,10 @@ import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
 import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-detail.component';
+import { ParticipantComponent } from './participant/participant.component';
 
 @NgModule({
-  declarations: [	
+  declarations: [		
     AppComponent,
     NavComponent,
     CourseComponent,
@@ -47,7 +48,8 @@ import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-det
     TeacherDetailComponent,
       CalendarComponent,
       CalendarAddComponent,
-      CalendarDetailComponent
+      CalendarDetailComponent,
+      ParticipantComponent
    ],
   imports: [
     BrowserModule,

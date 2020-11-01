@@ -7,11 +7,7 @@ namespace LYLAcademy.API.Models
 {
     public class Participant
     {
-        public Participant()
-        {
-            Student = new Student();
-            Calendar = new Calendar();
-        }
+      
         public int ParticipantId { get; set; }
         public int StudentId { get; set; }
         public decimal Amount { get; set; }
@@ -21,8 +17,6 @@ namespace LYLAcademy.API.Models
         public int IsDelete { get; set; }      
         public DateTime CreateDate { get; set; }      
         public DateTime UpdateDate { get; set; }
-        public Student Student { get; set; }
-        public Calendar Calendar { get; set; }
 
 
     }

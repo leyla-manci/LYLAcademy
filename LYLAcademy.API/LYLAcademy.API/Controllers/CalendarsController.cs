@@ -42,6 +42,126 @@ namespace LYLAcademy.API.Controllers
             return calendar;
         }
 
+        // GET: api/Calendars/byParticipant/1
+        [HttpGet("byParticipant/{id}")]
+        public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarByParticipant(int id)
+        {
+            
+            var calIdList =  _context.Participants.Where(part => part.StudentId == id).Select(x=>x.CalendarId).ToList();
+            if(calIdList!= null)
+            {
+                var calendarList = await _context.Calendars
+                    .Include(c => c.Course)
+                    .Include(t => t.Teacher)
+                    .Include(p=>p.ParticipantList)
+                    .Where(calendar =>
+                    calIdList.Contains(calendar.CalendarId)).ToListAsync();
+
+                if (calendarList == null)
+                {
+                    return NotFound();
+                }
+                
+                for (int i = 0; i < calendarList.Count();i++)
+                {
+                    if(calendarList[i].ParticipantList == null) {
+
+                        Participant participant = _context.Participants.FirstOrDefault(part => part.StudentId == id
+                      && part.CalendarId == calendarList[i].CalendarId);
+                        if (participant != null)
+                        {
+                            calendarList[i].ParticipantList.Clear();
+                            calendarList[i].ParticipantList.Add(participant);
+                        }
+                    }
+                    if (calendarList[i].Teacher.TeacherId == 0)
+                    {
+
+                        Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
+                        if (teacher != null)
+                        {
+                            calendarList[i].Teacher = teacher;
+                        }
+                    }
+                    if (calendarList[i].Course.CourseId == 0)
+                    {
+
+                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                        if (course != null)
+                        {
+                            calendarList[i].Course = course;
+                        }
+                    }
+
+
+
+
+                }
+
+             
+                return calendarList;
+            }
+
+            return null;
+
+            
+        }
+        // GET: api/Calendars/toJoin/1
+        [HttpGet("toJoin/{id}")]
+        public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarToJoin(int id)
+        {
+
+            var calIdList = _context.Participants.Where(part => part.StudentId == id).Select(x => x.CalendarId).ToList();
+            if (calIdList != null)
+            {
+                var calendarList = await _context.Calendars
+                    .Include(c => c.Course)
+                    .Include(t => t.Teacher).Where(calendar =>
+                    !calIdList.Contains(calendar.CalendarId)).ToListAsync();
+
+                if (calendarList == null)
+                {
+                    return NotFound();
+                }
+
+                for (int i = 0; i < calendarList.Count(); i++)
+                {
+                    
+                    if (calendarList[i].Teacher.TeacherId == 0)
+                    {
+
+                        Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
+                        if (teacher != null)
+                        {
+                            calendarList[i].Teacher = teacher;
+                        }
+                    }
+                    if (calendarList[i].Course.CourseId == 0)
+                    {
+
+                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                        if (course != null)
+                        {
+                            calendarList[i].Course = course;
+                        }
+                    }
+
+
+
+
+                }
+
+
+
+                return calendarList;
+            }
+
+            return null;
+
+
+        }
+
+
         // PUT: api/Calendars/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
