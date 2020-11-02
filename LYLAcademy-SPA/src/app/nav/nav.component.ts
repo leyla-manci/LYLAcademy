@@ -3,6 +3,7 @@ import { LoginUser } from '../models/loginUser';
 import { User } from '../models/User';
 import { AlertifyService } from '../services/alertify.service';
 import { AuthService } from '../services/Auth.service';
+import { ScriptLoaderService } from '../services/script-loader.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class NavComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private alertifyService: AlertifyService,
-    private userService: UserService
+    private userService: UserService,    
+    private _script: ScriptLoaderService
   ) {
     this.userN = "LYL Academy";
   }
@@ -23,6 +25,8 @@ export class NavComponent implements OnInit {
   userN :string;
   user:User;
   ngOnInit() {
+    
+    //this._script.loadScriptsManuel();
     this.CurrentUserInfo(this.authService.currentUserId);
     if(this.currentUserName != null)
     {

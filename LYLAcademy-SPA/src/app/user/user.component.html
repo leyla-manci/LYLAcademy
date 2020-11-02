@@ -1,76 +1,114 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h1></h1>
-      <a
-        routerLink="/userAdd"
-        class="fa fa-plus"
-      >
-        Add New User
-    </a>
-      <hr />
+   <!-- Main section-->
+   <section class="section-container col-md-12">
+    <!-- Page content-->
+    <div class="content-wrapper col-md-12">
+     
+       <div class="container-fluid col-md-12">
+          <div class="card col-md-12">
+             <div class="card-header col-md-12">
+                <div class="card-title"></div>
+                <div class="text-sm"> <a
+                  routerLink="/userAdd"
+                  class="fa fa-plus"
+                >
+                  Add New User
+              </a> </div>
+             </div>
+             <div class="card-body col-md-12">
+              <mat-card>
+                
+                <div class="example-container mat-elevation-z8">
+                    <div class="">
+                        <mat-form-field style="width: 98%;">
+                            <input matInput (keyup)="Filter($event.target.value)" placeholder="Filter">
+                        </mat-form-field>
+                    </div>
+                    <mat-table #Table [dataSource]="MyDataSource" matSort>
+            
+                        <ng-container matColumnDef="userId">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> User Id </mat-header-cell>
+                            <mat-cell *matCellDef="let post"> {{post.userId}} </mat-cell>
+                        </ng-container>
+            
+                        <ng-container matColumnDef="name">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header>  User Name </mat-header-cell>
+                            <mat-cell *matCellDef="let post"> {{post.name}} </mat-cell>
+                        </ng-container>
+            
+                      
+                        <ng-container matColumnDef="password">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Password </mat-header-cell>
+                            <mat-cell *matCellDef="let post"> {{post.password}} </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="isStudent">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Is Student </mat-header-cell>
+                            <mat-cell *matCellDef="let post">  
+                                <select
+                                disabled
+                                id="isStudent"
+                                value="{{post.isStudent}}"
+                              >
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                              </select>
+                            </mat-cell>
+                        </ng-container>
+                     
+                        <ng-container matColumnDef="isTeacher">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Is Teacher </mat-header-cell>
+                            <mat-cell *matCellDef="let post">
+                                <select
+                                disabled
+                                id="isTeacher"
+                                value="{{post.isTeacher}}"
+                              >
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                              </select>
+                            </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="isAdmin">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Is Admin </mat-header-cell>
+                            <mat-cell *matCellDef="let post">
+                                <select
+                                disabled
+                                id="isAdmin"
+                                value="{{post.isAdmin}}"
+                              >
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                              </select> </mat-cell>
+                        </ng-container>
+                        <ng-container matColumnDef="actions" >
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> </mat-header-cell>
+                            <mat-cell *matCellDef="let post">                            
+                        <div class="row col-md-12">
+                          <div class="col-md-4"></div>
+                          <div class="col-md-4"><a class="fa fa-trash" (click)="delete(post.userId)"></a></div>
+                          <div class="col-md-4"> <a routerLink="/userDetail/{{ post.userId }}" class="fa fa-edit" > </a></div>
+                        </div>
+                                 </mat-cell>
+                        </ng-container>
+                       
+            
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+            
+                    <!-- To paginate between pages with search -->
+                    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">
+                    </mat-paginator>
+                </div>
+            </mat-card>
+             </div>
+          </div>
+        
+       </div>
     </div>
-  </div>
-  <div class="row">
-    <table class="table" id="datatable1">
-      <thead class="thead-light">
-        <tr>
-          <th  class="sort-numeric" data-priority="1" scope="col">User Id</th>
-          <th  class="sort-alpha" data-priority="2" scope="col">User Name</th>
-          <th scope="col">Password</th>
-          <th scope="col">Is Teacher</th>
-          <th scope="col">Is Student</th>
-          <th scope="col">Is Admin</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <th scope="row">{{ user.userId }}</th>
-          <td>{{ user.name }}</td>
-          <td>{{ user.password }}</td>
-          <td>
-            <select
-              class="custom-select"
-              disabled
-              id="isTeacher"
-              value="{{ user.isTeacher }}"
-            >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </td>
-          <td>
-            <select
-              class="custom-select"
-              disabled
-              id="isStudent"
-              value="{{ user.isStudent }}"
-            >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </td>
-          <td>
-            <select
-              class="custom-select"
-              disabled
-              id="isAdmin"
-              value="{{ user.isAdmin }}"
-            >
-              <option value="0">No</option>
-              <option value="1">Yes</option>
-            </select>
-          </td>
-          <td>
-              <div class="row col-md-12">
-                <div class="col-md-4"></div>
-                <div class="col-md-4"><a class="fa fa-trash" (click)="delete(user.userId)"></a></div>
-                <div class="col-md-4"> <a routerLink="/userDetail/{{ user.userId }}" class="fa fa-edit" > </a></div>
-              </div>
-           </td>
-        </tr>
-      </tbody>
-    </table>
+ </section>
+
+ 
   </div>
 </div>

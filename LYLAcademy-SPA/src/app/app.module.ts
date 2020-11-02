@@ -2,6 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { appRoutes } from './routes';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,10 +36,11 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
 import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-detail.component';
 import { ParticipantComponent } from './participant/participant.component';
-import { ParticipantDetailComponent } from "./participant/participant-detail/participant-detail.component";
+import { ParticipantDetailComponent } from './participant/participant-detail/participant-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
     NavComponent,
     CourseComponent,
@@ -47,22 +57,42 @@ import { ParticipantDetailComponent } from "./participant/participant-detail/par
     TeacherComponent,
     TeacherAddComponent,
     TeacherDetailComponent,
-      CalendarComponent,
-      CalendarAddComponent,
-      CalendarDetailComponent,
-      ParticipantComponent,
-      ParticipantDetailComponent
-   ],
+    CalendarComponent,
+    CalendarAddComponent,
+    CalendarDetailComponent,
+    ParticipantComponent,
+    ParticipantDetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,  
+    HttpClientModule,
     RouterModule.forRoot(appRoutes, {
-      onSameUrlNavigation: 'reload'
+      onSameUrlNavigation: 'reload',
     }),
     FormsModule,
     ReactiveFormsModule,
-  ], exports: [RouterModule],
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatInputModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSortModule,
+  ],
+  exports: [
+    RouterModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatInputModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSortModule,
+  ],
   providers: [AlertifyService],
   bootstrap: [AppComponent],
 })

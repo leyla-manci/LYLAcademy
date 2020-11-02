@@ -40,6 +40,44 @@ return Promise.all(promises);
  * @param loadOnce
  * @returns {Promise<any[]>}
  */
+
+ 
+loadScriptsManuel() { 
+  
+  // This array contains all the files/CDNs 
+  const dynamicScripts = [ 
+    'vendor/modernizr/modernizr.custom.js',
+    'vendor/js-storage/js.storage.js',
+    'vendor/screenfull/dist/screenfull.js',
+    'vendor/i18next/i18next.js',
+    'vendor/i18next-xhr-backend/i18nextXHRBackend.js',
+    'vendor/jquery/dist/jquery.js',
+    'vendor/popper.js/dist/umd/popper.js',
+    'vendor/bootstrap/dist/js/bootstrap.js',
+    'vendor/datatables.net/js/jquery.dataTables.js',
+    'vendor/datatables.net-bs4/js/dataTables.bootstrap4.js',
+    'vendor/datatables.net-buttons/js/dataTables.buttons.js',
+    'vendor/datatables.net-buttons-bs/js/buttons.bootstrap.js',
+    'vendor/datatables.net-buttons/js/buttons.colVis.js',
+    'vendor/datatables.net-buttons/js/buttons.flash.js',
+    'vendor/datatables.net-buttons/js/buttons.html5.js',
+    'vendor/datatables.net-buttons/js/buttons.print.js',
+    'vendor/datatables.net-keytable/js/dataTables.keyTable.js',
+    'vendor/datatables.net-responsive/js/dataTables.responsive.js',
+    'vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js',
+    'vendor/jszip/dist/jszip.js',
+    'vendor/pdfmake/build/pdfmake.js',
+    'vendor/pdfmake/build/vfs_fonts.js',
+    'js/app.js'
+  ]; 
+  for (let i = 0; i < dynamicScripts.length; i++) { 
+    const node = document.createElement('script'); 
+    node.src = dynamicScripts[i]; 
+    node.type = 'text/javascript'; 
+    node.async = false; 
+    document.getElementsByTagName('head')[0].appendChild(node); 
+  } 
+}
 loadScripts(tag, scripts, loadOnce?: boolean) {
 loadOnce = loadOnce || false;
 
