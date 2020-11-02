@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../models/User';
 import { AlertifyService } from '../services/alertify.service';
 import { AuthService } from '../services/Auth.service';
+import { ScriptLoaderService } from '../services/script-loader.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -19,9 +20,13 @@ export class UserComponent implements OnInit {
     private alertifyService:AlertifyService
   ) {}
 
+ 
+
   users: User[];
   ngOnInit() {
-    this.refresh();
+   
+    
+        this.refresh();
   }
   refresh() {
     if (!this.isAuthenticated) {
@@ -32,6 +37,7 @@ export class UserComponent implements OnInit {
       });
     }
   }
+
 
   get isAuthenticated() {
     return this.authService.loggedIn();

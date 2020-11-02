@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { AlertifyService } from './alertify.service';
 import { RegisterUser } from '../models/registerUser';
 import { UserService } from './user.service';
-import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +14,7 @@ export class AuthService {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private alertifyService: AlertifyService,
-    private userService: UserService
+    private alertifyService: AlertifyService
   ) {}
   path = 'https://localhost:44378/api/auth/';
   userToken: any;
@@ -87,7 +85,7 @@ export class AuthService {
     if (this.token == null) {
       return '0';
     } else {
-    return this.jwtHelper.decodeToken(this.token).nameId;
+      return this.jwtHelper.decodeToken(this.token).nameId;
     }
   }
 
@@ -102,18 +100,21 @@ export class AuthService {
     if (this.token == null) {
       return '0';
     } else {
-    return this.jwtHelper.decodeToken(this.token).isAdmin;}
+      return this.jwtHelper.decodeToken(this.token).isAdmin;
+    }
   }
   isTeacher() {
     if (this.token == null) {
       return '0';
     } else {
-    return this.jwtHelper.decodeToken(this.token).isTeacher;}
+      return this.jwtHelper.decodeToken(this.token).isTeacher;
+    }
   }
   isStudent() {
     if (this.token == null) {
       return '0';
     } else {
-    return this.jwtHelper.decodeToken(this.token).isStudent;}
+      return this.jwtHelper.decodeToken(this.token).isStudent;
+    }
   }
 }

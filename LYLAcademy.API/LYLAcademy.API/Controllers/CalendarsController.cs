@@ -32,7 +32,10 @@ namespace LYLAcademy.API.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Calendar>> GetCalendar(int id)
         {
-            var calendar = await _context.Calendars.Include(c => c.Course).Include(t => t.Teacher).FirstOrDefaultAsync(calendar=> calendar.CalendarId == id);
+            var calendar = await _context.Calendars
+                .Include(c => c.Course)
+                .Include(t => t.Teacher)
+                .Include(p => p.ParticipantList).FirstOrDefaultAsync(calendar=> calendar.CalendarId == id);
 
             if (calendar == null)
             {

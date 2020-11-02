@@ -18,6 +18,6 @@ export class Calendar {
     endDate: Date;
     course: Course;
     teacher:Teacher;   
-    participants:Participant[];
+    participantList:Participant[];
     isDelete:number;
 }

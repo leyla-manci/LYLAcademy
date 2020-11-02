@@ -27,6 +27,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
 import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-detail.component';
 import { ParticipantComponent } from './participant/participant.component';
+import { ParticipantDetailComponent } from "./participant/participant-detail/participant-detail.component";
 
 @NgModule({
   declarations: [		
@@ -49,16 +50,19 @@ import { ParticipantComponent } from './participant/participant.component';
       CalendarComponent,
       CalendarAddComponent,
       CalendarDetailComponent,
-      ParticipantComponent
+      ParticipantComponent,
+      ParticipantDetailComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes),
+    HttpClientModule,  
+    RouterModule.forRoot(appRoutes, {
+      onSameUrlNavigation: 'reload'
+    }),
     FormsModule,
     ReactiveFormsModule,
-  ],
+  ], exports: [RouterModule],
   providers: [AlertifyService],
   bootstrap: [AppComponent],
 })

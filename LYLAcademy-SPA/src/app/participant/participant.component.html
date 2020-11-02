@@ -70,19 +70,14 @@
           <small class="text-muted"
           >{{ calendar.startDateStr }} - {{ calendar.endDateStr }}  </small>
       
-          <p class="card-text">{{ calendar.courseContent }}</p>
+          <p class="card-text" [innerHTML]="calendar.courseContent"></p>
           <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
+            <div class="btn-group">            
               <a
-              *ngIf="!showOtherCourseList"
-              class="fas fa fa-edit pr-2"
-              routerLink="/participantDetail/{{student.studentId}}" 
-            >
-            </a>
-              <a
-                *ngIf="showOtherCourseList"
                 class="fas fa fa-eye pr-2"
-                routerLink="/participantShow/{{student.studentId}}" 
+                [routerLink]="['/participantDetail']" 
+                [queryParams]="{calendarId:calendar.calendarId,showToJoin:showOtherCourseList}"
+               
               >
           </a>
               <a

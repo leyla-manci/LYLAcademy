@@ -18,6 +18,7 @@ import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-det
 import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
 import { NavComponent } from './nav/nav.component';
 import { ParticipantComponent } from './participant/participant.component';
+import { ParticipantDetailComponent } from './participant/participant-detail/participant-detail.component';
 
 export const appRoutes: Routes = [
   { path: 'course', component: CourseComponent },
@@ -32,7 +33,8 @@ export const appRoutes: Routes = [
   { path: 'student', component: StudentComponent },
   { path: 'studentDetail/:studentId', component: StudentDetailComponent },
   { path: 'studentAdd', component: StudentAddComponent },
-  { path: 'participant', component: ParticipantComponent },
+  { path: 'participant', component: ParticipantComponent },  
+  { path: 'participantDetail', component: ParticipantDetailComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'calendarDetail/:calendarId', component: CalendarDetailComponent },
   { path: 'calendarAdd', component: CalendarAddComponent },
