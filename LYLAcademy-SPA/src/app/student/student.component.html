@@ -1,16 +1,31 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1></h1>
-      <a
+   <h1> </h1>
+  <div class="row col-md-12">
+    <div class="col-md-2">
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
         routerLink="/studentAdd"
-        class="fa fa-plus"
       >
-        Add New Student
-    </a>
-      <hr />
+        <i class="fas fa fa-plus pr-2" aria-hidden="true"></i> Add New Student
+      </button>
+      
+    </div>
+    <div class="col-md-10">
+      <!-- Search form -->   
+      <i class="fas fa fa-search" aria-hidden="true"></i>
+      <input
+      (keyup)="Filter($event.target.value)"
+        class="ml-3 w-50"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+     
     </div>
   </div>
+  <hr/> 
+
   <div class="row">
     <table class="table">
       <thead class="thead-light">

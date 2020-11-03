@@ -19,6 +19,7 @@ export class CourseComponent implements OnInit {
     private alertifyService: AlertifyService
   ) {}
   courses: Course[];
+  coursesAll: Course[];
   ngOnInit() {
     this.refresh();
   }
@@ -28,15 +29,21 @@ export class CourseComponent implements OnInit {
     } else {
       this.courseService.getCourses().subscribe((data) => {
         this.courses = data;
-        var i = 0;
-        this.courses.forEach((element) => {
-          this.courses[i].description =
-            this.courses[i].description.substring(0, 20) + ' ...';
-          this.courses[i].duration = this.courses[i].duration.substring(0, 10);
-          i++;
-        });
+        this.coursesAll = this.courses;
+        this.setTextBeauty();
       });
     }
+  }
+  setTextBeauty() {
+    var i = 0;
+    this.courses.forEach((element) => {
+      if(this.courses[i].description.length > 20){
+        this.courses[i].description =
+        this.courses[i].description.substring(0, 20) + ' ...';
+      }
+      this.courses[i].duration = this.courses[i].duration.substring(0, 10);
+      i++;
+    });
   }
 
   get isAuthenticated() {
@@ -54,5 +61,18 @@ export class CourseComponent implements OnInit {
         this.refresh();
       }
     );
+  }
+
+  Filter(searchstring: string) {
+    searchstring = searchstring.trim();
+    searchstring = searchstring.toLowerCase();
+    this.courses = this.coursesAll.filter(
+      (c) =>
+        c.description.toLowerCase().includes(searchstring) ||
+        c.name.toLowerCase().includes(searchstring) ||
+        c.duration.toLowerCase().includes(searchstring) ||
+        c.price.toString().includes(searchstring)
+    );
+    this.setTextBeauty();
   }
 }

@@ -46,7 +46,7 @@ loadScriptsManuel() {
   
   // This array contains all the files/CDNs 
   const dynamicScripts = [ 
-    'vendor/modernizr/modernizr.custom.js',
+ /*   'vendor/modernizr/modernizr.custom.js',
     'vendor/js-storage/js.storage.js',
     'vendor/screenfull/dist/screenfull.js',
     'vendor/i18next/i18next.js',
@@ -68,7 +68,7 @@ loadScriptsManuel() {
     'vendor/jszip/dist/jszip.js',
     'vendor/pdfmake/build/pdfmake.js',
     'vendor/pdfmake/build/vfs_fonts.js',
-    'js/app.js'
+    'js/app.js'*/
   ]; 
   for (let i = 0; i < dynamicScripts.length; i++) { 
     const node = document.createElement('script'); 

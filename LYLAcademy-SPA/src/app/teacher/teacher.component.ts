@@ -22,6 +22,7 @@ export class TeacherComponent implements OnInit {
   ) {}
 
   teachers: Teacher[];
+  teachersAll: Teacher[];
   ngOnInit() {
     this.refresh();
   }
@@ -31,6 +32,7 @@ export class TeacherComponent implements OnInit {
     } else {
       this.teacherService.getTeachers().subscribe((data) => {
         this.teachers = data;
+        this.teachersAll = this.teachers;
       });
     }
   }
@@ -52,6 +54,15 @@ export class TeacherComponent implements OnInit {
      });
    
   }
-
+  Filter(searchstring:string)
+  {
+    searchstring = searchstring.trim(); 
+    searchstring = searchstring.toLowerCase();
+    this.teachers =this.teachersAll.filter(c=>c.name.toLowerCase().includes(searchstring)
+     || c.surname.toLowerCase().includes(searchstring)
+     || c.qualification.toLowerCase().includes(searchstring)
+     || c.compBranch.toLowerCase().includes(searchstring)
+     || c.userName.toLowerCase().includes(searchstring));
+  }
 
 }

@@ -21,6 +21,7 @@ export class StudentComponent implements OnInit {
   ) {}
 
   students: Student[];
+  studentsAll: Student[];
   ngOnInit() {
     this.refresh();
   }
@@ -30,6 +31,7 @@ export class StudentComponent implements OnInit {
     } else {
       this.studentService.getStudents().subscribe((data) => {
         this.students = data;
+        this.studentsAll=this.students;
       });
     }
   }
@@ -50,6 +52,18 @@ export class StudentComponent implements OnInit {
 
      });
    
+  }
+
+  Filter(searchstring:string)
+  {
+    searchstring = searchstring.trim(); 
+    searchstring = searchstring.toLowerCase();
+    this.students =this.studentsAll.filter(c=>c.name.toLowerCase().includes(searchstring)
+     || c.surname.toLowerCase().includes(searchstring)
+     || c.address.toLowerCase().includes(searchstring)
+     || c.email.toLowerCase().includes(searchstring)
+     || c.userName.toLowerCase().includes(searchstring)
+     || c.phone.toString().includes(searchstring));
   }
 
 }

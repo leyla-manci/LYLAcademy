@@ -1,46 +1,82 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1> </h1>
-       <a  routerLink="/courseAdd"  class="fa fa-plus">
-        Add New Course
-       </a>
-       <hr/>
-      </div>
+ <h1> </h1>
+  <div class="row col-md-12">
+    <div class="col-md-2">
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+        routerLink="/courseAdd"
+      >
+        <i class="fas fa fa-plus pr-2" aria-hidden="true"></i> Add New Course
+      </button>
+      
+    </div>
+    <div class="col-md-10">
+      <!-- Search form -->   
+      <i class="fas fa fa-search" aria-hidden="true"></i>
+      <input
+      (keyup)="Filter($event.target.value)"
+        class="ml-3 w-50"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+     
+    </div>
   </div>
-  <div class="row"> 
-    <div *ngFor="let course of courses" class="col-md-3">
-      <div class="card mb-4 shadow-sm">
-        <svg
-          class="bd-placeholder-img card-img-top"
-          width="100%"
-          height="100"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-          role="img"
-          aria-label="Placeholder: Thumbnail"
-        >
-          <title>{{course.name}}</title>
-          <rect width="100%" height="100%" fill="#adb5bd" />
-          <text style="text-transform:uppercase" x="30%" y="50%" fill="#eceeef" dy=".3em">{{course.name}}</text>
-        </svg>
-        <div class="card-body">
-          <p class="card-text">{{course.description}}
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-              <div class="row col-md-12">
-                <div class="col-md-4">
-                  <a  class="fa fa-trash" (click)="delete(course.courseId)"></a></div>
-                <div class="col-md-4"> <a  routerLink="/courseDetail/{{course.courseId}}" class="fa fa-edit"></a></div>
-                <div class="col-md-4"></div>
-              </div>             
+  <hr/> 
+  <div class="row">   
+      <div *ngFor="let course of courses" class="col-md-3">
+        <div class="card mb-4 shadow-sm">
+          <svg
+            class="bd-placeholder-img card-img-top"
+            width="100%"
+            height="100"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            role="img"
+            aria-label="Placeholder: Thumbnail"
+          >
+            <title>{{ course.name }}</title>
+            <rect width="100%" height="100%" fill="#f5cd79" />
+            <text
+              style="text-transform: uppercase"
+              x="30%"
+              y="50%"
+              fill="#eceeef"
+              dy=".3em"
+            >
+              {{ course.name }}
+            </text>
+          </svg>
+          <div class="card-body">
+            <p class="card-text">{{ course.description }}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <div class="row col-md-12">
+                  <div class="col-md-4">
+                    <a
+                      class="fa fa-trash"
+                      (click)="delete(course.courseId)"
+                    ></a>
+                  </div>
+                  <div class="col-md-4">
+                    <a
+                      routerLink="/courseDetail/{{ course.courseId }}"
+                      class="fa fa-edit"
+                    ></a>
+                  </div>
+                  <div class="col-md-4"></div>
+                </div>
+              </div>
+              <small class="text-muted"
+                >{{ course.duration }} - {{ course.price  | currency}} </small
+              >
             </div>
-            <small class="text-muted">{{course.duration}}  - {{course.price}} TL</small>
           </div>
         </div>
       </div>
-    </div>
+    
   </div>
 </div>

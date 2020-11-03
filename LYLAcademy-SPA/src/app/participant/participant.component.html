@@ -1,10 +1,8 @@
 <div class="container">
-  <div class="row">
-    <div class="row col-md-12">
-      <h6></h6>
-        </div>
-    <div class="row col-md-12">
-      <div class="col-md-3">
+  <h1> </h1>
+  <div class="row col-md-12">
+
+      <div class="col-md-2">
         <button
           type="button"
           class="btn btn-sm btn-outline-secondary"
@@ -13,7 +11,7 @@
           <i class="fas fa fa-list pr-2" aria-hidden="true"></i> My Course List
         </button>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <button
           type="button"
           class="btn btn-sm btn-outline-secondary"
@@ -28,18 +26,32 @@
           <input
             type="checkbox"
             class="custom-control-input"
-            id="isShowExpiredAlso"
-            [(ngModel)]="isShowExpiredAlso"
+            id="isHideExpired"
+            [(ngModel)]="isHideExpired"
+            (change)="expiredFilter($event.target.checked)"
+
           />
-          <label class="custom-control-label" for="isShowExpiredAlso">
-            Show Expired Courses Also
+          <label class="custom-control-label" for="isHideExpired">
+            Hide expired courses
           </label>
         </div>
       </div>
-      <div class="col-md-3"></div>
+   
+    <div class="col-md-5">
+      <!-- Search form -->   
+      <i class="fas fa fa-search" aria-hidden="true"></i>
+      <input
+      (keyup)="Filter($event.target.value)"
+        class="ml-3 w-75"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+     
     </div>
   </div>
-  <hr />
+  <hr/> 
+
   <div class="row">
     <div *ngFor="let calendar of calendars" class="col-md-3">
 
@@ -54,8 +66,8 @@
           role="img"
           aria-label="Placeholder: Thumbnail"
         >
-          <title>{{ calendar.course.name }}</title>
-          <rect width="100%" height="100%" fill="#adb5bd" />
+          <title>{{ calendar.course.name }} - {{calendar.price | currency}}</title>
+          <rect width="100%" height="100%" fill="#ccae62" />
           <text
             style="text-transform: uppercase"
             x="30%"
@@ -65,6 +77,12 @@
           >
             {{ calendar.course.name }} 
           </text>
+          <text style="text-transform: uppercase"
+          x="75%"
+          y="80%"
+          fill="#30336b"
+          dy=".3em"> {{calendar.price | currency}}</text>
+         
         </svg>
         <div class="card-body">
           <small class="text-muted"
