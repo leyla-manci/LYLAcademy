@@ -107,6 +107,7 @@ export class CalendarComponent implements OnInit {
       );
       this.calendars[i].courseContent =
         this.calendars[i].courseContent.substring(0, 50) + ' ...';
+       this.calendars[i].participantCount= this.calendars[i].participantList.length;
       i++;
     });
   }

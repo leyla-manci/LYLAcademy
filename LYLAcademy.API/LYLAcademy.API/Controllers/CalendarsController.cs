@@ -27,7 +27,8 @@ namespace LYLAcademy.API.Controllers
         {
             var calendarList = await _context.Calendars
                 .Include(c=>c.Course)
-                .Include(t=>t.Teacher).ToListAsync();
+                .Include(t=>t.Teacher)
+                .Include(p => p.ParticipantList).ToListAsync();
        
                 if (calendarList == null)
                 {
@@ -81,7 +82,9 @@ namespace LYLAcademy.API.Controllers
             var calendar = await _context.Calendars
                 .Include(c => c.Course)
                 .Include(t => t.Teacher)
-                .Include(p => p.ParticipantList).FirstOrDefaultAsync(calendar=> calendar.CalendarId == id);
+                .Include(p => p.ParticipantList)
+                .ThenInclude(s=>s.Student)
+                .FirstOrDefaultAsync(calendar=> calendar.CalendarId == id);
 
             if (calendar == null)
             {

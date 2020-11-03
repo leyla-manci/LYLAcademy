@@ -25,7 +25,7 @@ export class StudentService {
     getStudentById(studentId): Observable<Student> {
       return this.httpClient.get<Student>(this.path + 'Students/' + studentId);
     }
-    getStudentUserName(studentUserName): Observable<Student> {
+    getStudentUserName(studentUserName): Observable<Student> {    
       return this.httpClient.get<Student>(this.path + 'Students/byUserName/' + studentUserName);
     }
   

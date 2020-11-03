@@ -33,7 +33,7 @@ export class ParticipantComponent implements OnInit {
   isHideExpired = false;
   student: Student;
   dateFormat = 'dd MM yyyy';
-  serachText = "";
+  serachText = '';
   ngOnInit() {
     this.refresh();
   }
@@ -45,6 +45,7 @@ export class ParticipantComponent implements OnInit {
         .getStudentUserName(this.authService.userName())
         .subscribe((data) => {
           this.student = data;
+          
           this.showMyList();
         });
     }
@@ -103,8 +104,10 @@ export class ParticipantComponent implements OnInit {
     let dateTime = new Date();
     this.participantAdd.createDate = dateTime;
     this.participantAdd.updateDate = dateTime;
-    this.participantService.add(this.participantAdd);
-    this.refresh();
+    this.participantService.add(this.participantAdd).subscribe((data) => {
+      this.alertifyService.success('Participant creation is successful!');
+      this.refresh();
+    });
   }
 
   Filter(searchstring: string) {
@@ -140,6 +143,6 @@ export class ParticipantComponent implements OnInit {
       );
      this.setTextBeauty();}
     */
-   this.Filter(this.serachText);
+    this.Filter(this.serachText);
   }
 }

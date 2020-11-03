@@ -1,30 +1,16 @@
 <!-- Grid row -->
 <div class="row accordion-gradient-bcg d-flex justify-content-center">
   <!-- Grid column -->
-  <div class="col-md-10 col-xl-6 py-5">
-    <a class="fas fa fa-close pr-2" routerLink="/participant"> </a>
+  <div class="col-md-12 col-xl-8 py-1">
+    <a class="fas fa fa-close pr-2" routerLink="/calendar"> </a>
     <!--Accordion wrapper-->
-    <div
-      class="accordion md-accordion accordion-2"
-      id="accordionEx7"
-      role="tablist"
-      aria-multiselectable="true"
-    >
+    <div class="accordion md-accordion accordion-2" id="accordionEx7" role="tablist" aria-multiselectable="true">
       <!-- Accordion card -->
       <div class="card">
         <!-- Card header -->
-        <div
-          class="card-header rgba-stylish-strong z-depth-1 mb-1"
-          role="tab"
-          id="heading2"
-        >
-          <a
-            data-toggle="collapse"
-            data-parent="#accordionEx7"
-            href="#collapse2"
-            aria-expanded="true"
-            aria-controls="collapse2"
-          >
+        <div class="card-header rgba-stylish-strong z-depth-1 mb-1" role="tab" id="heading2">
+          <a data-toggle="collapse" data-parent="#accordionEx7" href="#collapse2" aria-expanded="true"
+            aria-controls="collapse2">
             <h5 class="mb-0 white-text text-uppercase font-thin">
               Scheduled Course Detail
               <i class="fas fa fa-angle-down rotate-icon"></i>
@@ -33,13 +19,8 @@
         </div>
 
         <!-- Card body -->
-        <div
-          id="collapse2"
-          class="collapse show"
-          role="tabpanel"
-          aria-labelledby="heading2"
-          data-parent="#accordionEx7"
-        >
+        <div id="collapse2" class="collapse show" role="tabpanel" aria-labelledby="heading2"
+          data-parent="#accordionEx7">
           <div class="card-body mb-1 rgba-grey-light white-text">
             <div class="container">
               <div class="row">
@@ -77,9 +58,9 @@
                     </li>
                   </ul>
 
-                 
+
                 </div>
-               
+
 
                 <div class="col-md-6 p-3 align-self-center">
                   <h5 class="font-weight-normal mb-3">Teacher detail</h5>
@@ -126,19 +107,9 @@
       <!-- Accordion card -->
       <div class="card">
         <!-- Card header -->
-        <div
-          class="card-header rgba-stylish-strong z-depth-1 mb-1"
-          role="tab"
-          id="heading3"
-        >
-          <a
-            class="collapsed"
-            data-toggle="collapse"
-            data-parent="#accordionEx7"
-            href="#collapse3"
-            aria-expanded="false"
-            aria-controls="collapse3"
-          >
+        <div class="card-header rgba-stylish-strong z-depth-1 mb-1" role="tab" id="heading3">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx7" href="#collapse3"
+            aria-expanded="false" aria-controls="collapse3">
             <h5 class="mb-0 white-text text-uppercase font-thin">
               Course Content <i class="fas fa fa-angle-down rotate-icon"></i>
             </h5>
@@ -146,35 +117,19 @@
         </div>
 
         <!-- Card body -->
-        <div
-          id="collapse3"
-          class="collapse"
-          role="tabpanel"
-          aria-labelledby="heading3"
-          data-parent="#accordionEx7"
-        >
+        <div id="collapse3" class="collapse" role="tabpanel" aria-labelledby="heading3" data-parent="#accordionEx7">
           <div class="card-body mb-1 rgba-grey-light white-text" [innerHTML]="calendar.courseContent">
-           
+
           </div>
         </div>
       </div>
       <!-- Accordion card -->
       <!-- Accordion card -->
-      <div  class="card">
+      <div class="card">
         <!-- Card header -->
-        <div
-          class="card-header rgba-stylish-strong z-depth-1 mb-1"
-          role="tab"
-          id="heading1"
-        >
-          <a
-            class="collapsed"
-            data-toggle="collapse"
-            data-parent="#accordionEx7"
-            href="#collapse1"
-            aria-expanded="false"
-            aria-controls="collapse1"
-          >
+        <div class="card-header rgba-stylish-strong z-depth-1 mb-1" role="tab" id="heading1">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx7" href="#collapse1"
+            aria-expanded="false" aria-controls="collapse1">
             <h5 class="mb-0 white-text text-uppercase font-thin">
               Participant Detail
               <i class="fas fa fa-angle-down rotate-icon"></i>
@@ -183,58 +138,53 @@
         </div>
 
         <!-- Card body -->
-        <div
-          id="collapse1"
-          class="collapse"
-          role="tabpanel"
-          aria-labelledby="heading1"
-          data-parent="#accordionEx7"
-        >
+        <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1" data-parent="#accordionEx7">
           <div class="card-body mb-1 rgba-grey-light white-text">
             <div class="container my-5">
-            
-                <div class="row">
-                  <div class="col-md-6 p-3 align-self-center">
-                    <img
-                      class="img-fluid rounded-left"
-                      src="https://mdbootstrap.com/img/Photos/Vertical/2.jpg"
-                      alt="project image"
-                    />
-                  </div>
+              <div class="row">
+                <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Student Id</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Sur Name</th>
+                      <th scope="col">User Name</th>
+                      <th scope="col">E-mail</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Paid</th>
+                      <th scope="col">Remain</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let participant of calendar.participantList">
+                      <th scope="row">{{ participant.student.studentId }}</th>
+                      <td>{{ participant.student.name }}</td>
+                      <td>{{ participant.student.surname }}</td>
+                      <td>
+                        {{ participant.student.userName }}
 
-               
-                  <div class="col-md-6 p-3 align-self-center">
-                    <h5 class="font-weight-normal mb-3">Profile</h5>
-                    <hr>
-  
-                    <p class="text-muted">
-                      {{ student.userName }} |  {{ student.name }} {{ student.surname }}
-                    </p>
-  
-                    <ul class="list-unstyled font-small mt-5 mb-0">
-                      <li>
-                        <p class="text-uppercase mb-2">
-                          <strong>Contact Detail</strong>
-                        </p>
-                        <p class="text-muted mb-4">
-                          {{ student.address }}  </p> <p class="text-muted mb-4"> {{ student.email }}  -  {{ student.phone }}
-                        </p>
-                      </li>
-  
-                      <li>
-                        <p class="text-uppercase mb-2">
-                          <strong>Invoiced | Paid : Remain  amount</strong>
-                        </p>
-                        <p class="text-muted mb-4">
-                          {{ participant.amount | currency }}  |  {{ participant.amountPaid | currency}}   :  {{ participant.amountRemain | currency}}
-                        
-                        </p>
-                      </li>
+                      </td>
+                      <td>{{ participant.student.email }}
+                      </td>
+                      <td>{{ participant.student.phone }}
+                      </td>
+                      <td>{{ participant.amount | currency }}
+                      </td>
+                      <td>{{ participant.amountPaid | currency }}
+                      </td>
+                      <td>{{ participant.amountRemain | currency }}
+                      </td>
+                      <td>
 
-                    </ul>
-                  </div>
-                </div>
-              
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
             </div>
           </div>
         </div>

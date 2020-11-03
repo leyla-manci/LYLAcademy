@@ -20,4 +20,5 @@ export class Calendar {
     teacher:Teacher;   
     participantList:Participant[];
     isDelete:number;
+    participantCount:number;
 }

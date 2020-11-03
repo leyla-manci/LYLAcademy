@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Participant } from '../models/Participant';
+import { ParticipantAdd } from '../models/ParticipantAdd';
 import { AlertifyService } from './alertify.service';
 
 @Injectable({
@@ -24,11 +25,8 @@ export class ParticipantService {
     return this.httpClient.get<Participant>(this.path + 'participants/' + participantId);
   }
 
-  add(participant) {
-    this.httpClient.post(this.path + 'participants', participant).subscribe((data) => {
-      this.alertifyService.success('Participant creation is successful!');
-      this.router.navigateByUrl('/participant');
-    });
+  add(participant:ParticipantAdd):Observable<Participant> {
+   return this.httpClient.post<Participant>(this.path + 'participants', participant);
   }
 
   save(participant){

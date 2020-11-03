@@ -1,20 +1,14 @@
 ﻿using LYLAcademy.API.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace LYLAcademy.API.Dtos
 {
-    public class ParticipantListDto
+    public class ParticipantAddDto
     {
-
-        public ParticipantListDto()
-        {
-            Student = new Student();
-            Calendar = new Calendar();
-        }
-        public int ParticipantId { get; set; }
         public int StudentId { get; set; }
         public decimal Amount { get; set; }
         public decimal AmountPaid { get; set; }
@@ -23,7 +17,6 @@ namespace LYLAcademy.API.Dtos
         public int IsDelete { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
-        public Student Student { get; set; }
-        public Calendar Calendar { get; set; }
+
     }
 }

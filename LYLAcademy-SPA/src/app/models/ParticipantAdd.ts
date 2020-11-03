@@ -1,3 +1,4 @@
+
 export class ParticipantAdd {
     studentId:number;
     amount:number;

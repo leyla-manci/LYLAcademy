@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LYLAcademy.API.Data;
 using LYLAcademy.API.Models;
+using LYLAcademy.API.Dtos;
+using AutoMapper;
 
 namespace LYLAcademy.API.Controllers
 {
@@ -15,10 +17,11 @@ namespace LYLAcademy.API.Controllers
     public class ParticipantsController : ControllerBase
     {
         private readonly DataContext _context;
-
-        public ParticipantsController(DataContext context)
+        private readonly IMapper _mapper;
+        public ParticipantsController(DataContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Participants
@@ -78,8 +81,12 @@ namespace LYLAcademy.API.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Participant>> PostParticipant(Participant participant)
+        public async Task<ActionResult<Participant>> PostParticipant(ParticipantAddDto participantDto)
         {
+            Participant participant = new Participant();
+             participant = _mapper.Map<Participant>(participantDto);
+            participant.Student = _context.Students.Find(participantDto.StudentId);
+            participant.StudentId = participantDto.StudentId;
             _context.Participants.Add(participant);
             await _context.SaveChangesAsync();
 

@@ -82,11 +82,22 @@
 
           <p class="card-text" [innerHTML]="calendar.courseContent"></p>
           <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group"></div>
+            <small class="text-muted">
+              {{ calendar.teacher.name }} {{ calendar.teacher.surname }}
+            </small>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <div class="row col-md-12">
+                <div class="col-md-4">  <a
+                  routerLink="/calendarDetail/{{ calendar.calendarId }}"
+                  class="fa fa-eye"
+                >
+                </a></div>
                 <div class="col-md-4">
                   <a
-                    routerLink="/calendarDetail/{{ calendar.calendarId }}"
+                    routerLink="/calendarEdit/{{ calendar.calendarId }}"
                     class="fa fa-edit"
                   >
                   </a>
@@ -98,12 +109,13 @@
                     (click)="delete(calendar.calendarId)"
                   ></a>
                 </div>
-                <div class="col-md-4"></div>
+             
               </div>
             </div>
             <small class="text-muted">
-              {{ calendar.teacher.name }} {{ calendar.teacher.surname }}
+             {{calendar.participantCount}}
             </small>
+          
           </div>
         </div>
       </div>

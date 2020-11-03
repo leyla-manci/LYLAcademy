@@ -56,7 +56,6 @@ export class CalendarDetailComponent implements OnInit {
   }
 
   getCalendar(calendarId) {
-    this.alertifyService.success(calendarId);
     this.calendarService.getCalendarById(calendarId).subscribe(
       (data) => {
         this.calendar = data;
@@ -72,9 +71,7 @@ export class CalendarDetailComponent implements OnInit {
       (error) => {},
       () => {
         this.teacher = this.calendar.teacher; 
-          this.getParticipant();
-       
-      }
+       }
     );
   }
 
@@ -82,7 +79,5 @@ export class CalendarDetailComponent implements OnInit {
     return this.authService.loggedIn();
   }
 
-  getParticipant() {
-    this.participantList = this.calendar.participantList;;
-  }
+  
 }

@@ -35,6 +35,7 @@ import { TeacherDetailComponent } from './teacher/teacher-detail/teacher-detail.
 import { CalendarComponent } from './calendar/calendar.component';
 import { CalendarAddComponent } from './calendar/calendar-add/calendar-add.component';
 import { CalendarDetailComponent } from './calendar/calendar-detail/calendar-detail.component';
+import { CalendarEditComponent } from "./calendar/calendar-edit/calendar-edit.component";
 import { ParticipantComponent } from './participant/participant.component';
 import { ParticipantDetailComponent } from './participant/participant-detail/participant-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -60,6 +61,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CalendarComponent,
     CalendarAddComponent,
     CalendarDetailComponent,
+    CalendarEditComponent,
     ParticipantComponent,
     ParticipantDetailComponent,
   ],
