@@ -25,7 +25,53 @@ namespace LYLAcademy.API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendars()
         {
-            return await _context.Calendars.Include(c=>c.Course).Include(t=>t.Teacher).ToListAsync();
+            var calendarList = await _context.Calendars
+                .Include(c=>c.Course)
+                .Include(t=>t.Teacher).ToListAsync();
+       
+                if (calendarList == null)
+                {
+                    return NotFound();
+                }
+
+                for (int i = 0; i < calendarList.Count(); i++)
+                {
+                    if (calendarList[i].ParticipantList == null)
+                    {
+
+                        List<Participant> participant = _context.Participants.Where(part => part.CalendarId == calendarList[i].CalendarId).ToList();
+                        if (participant != null)
+                        {
+                            calendarList[i].ParticipantList.Clear();
+                            calendarList[i].ParticipantList = participant;
+                        }
+                    }
+                    if (calendarList[i].Teacher.TeacherId == 0)
+                    {
+
+                        Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
+                        if (teacher != null)
+                        {
+                            calendarList[i].Teacher = teacher;
+                        }
+                    }
+                    if (calendarList[i].Course.CourseId == 0)
+                    {
+
+                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                        if (course != null)
+                        {
+                            calendarList[i].Course = course;
+                        }
+                    }
+
+
+
+                }
+
+
+                return calendarList;
+            
         }
 
         // GET: api/Calendars/5
@@ -109,6 +155,70 @@ namespace LYLAcademy.API.Controllers
 
             
         }
+
+
+        // GET: api/Calendars/byTeacher/1
+        [HttpGet("byTeacher/{id}")]
+        public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarByTeacher(int id)
+        {
+
+          
+                var calendarList = await _context.Calendars
+                    .Include(c => c.Course)
+                    .Include(t => t.Teacher)
+                    .Include(p => p.ParticipantList)
+                    .Where(calendar =>calendar.TeacherId == id).ToListAsync();
+
+                if (calendarList == null)
+                {
+                    return NotFound();
+                }
+
+                for (int i = 0; i < calendarList.Count(); i++)
+                {
+                    if (calendarList[i].ParticipantList == null)
+                    {
+
+                        List<Participant> participant = _context.Participants.Where(part =>  part.CalendarId == calendarList[i].CalendarId).ToList();
+                        if (participant != null)
+                        {
+                            calendarList[i].ParticipantList.Clear();
+                            calendarList[i].ParticipantList = participant;
+                        }
+                    }
+                    if (calendarList[i].Teacher.TeacherId == 0)
+                    {
+
+                        Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
+                        if (teacher != null)
+                        {
+                            calendarList[i].Teacher = teacher;
+                        }
+                    }
+                    if (calendarList[i].Course.CourseId == 0)
+                    {
+
+                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                        if (course != null)
+                        {
+                            calendarList[i].Course = course;
+                        }
+                    }
+
+
+
+
+                }
+
+
+                return calendarList;
+           
+
+
+        }
+
+
+
         // GET: api/Calendars/toJoin/1
         [HttpGet("toJoin/{id}")]
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarToJoin(int id)
