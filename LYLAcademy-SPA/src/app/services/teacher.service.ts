@@ -24,6 +24,9 @@ export class TeacherService {
   getTeacherById(TeacherId): Observable<Teacher> {
     return this.httpClient.get<Teacher>(this.path + 'Teachers/' + TeacherId);
   }
+  getTeacherUserName(teacherUserName): Observable<Teacher> {
+    return this.httpClient.get<Teacher>(this.path + 'Teachers/byUserName/' + teacherUserName);
+  }
 
   add(teacher) {
     this.httpClient.post(this.path + 'Teachers', teacher).subscribe((data) => {

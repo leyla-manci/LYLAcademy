@@ -28,6 +28,10 @@ export class CalendarService {
     getParticipantCalendar(participantId): Observable<Calendar[]> {
       return this.httpClient.get<Calendar[]>(this.path + 'Calendars/byParticipant/' + participantId);
     }
+
+    getTeacherCalendar(teacherId): Observable<Calendar[]> {
+      return this.httpClient.get<Calendar[]>(this.path + 'Calendars/byTeacher/' + teacherId);
+    }
     getCalendarToJoin(participantId): Observable<Calendar[]> {
       return this.httpClient.get<Calendar[]>(this.path + 'Calendars/toJoin/' + participantId);
     }

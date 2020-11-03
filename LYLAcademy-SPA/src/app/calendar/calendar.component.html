@@ -1,44 +1,109 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1> </h1>
-       <a *ngIf="isAdminUser=='1'" routerLink="/calendarAdd"  class="fa fa-plus">
-        Add New Calendar
-       </a>
-       <hr/>
+  <h1></h1>
+  <div class="row col-md-12">
+    <div class="col-md-4">
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+        routerLink="/calendarAdd"
+      >
+        <i class="fas fa fa-plus pr-2" aria-hidden="true"></i>Add New Training to Calendar
+      </button>
+    </div>
+    <div class="col-md-3">
+      <div class="custom-control custom-checkbox">
+        <input
+          type="checkbox"
+          class="custom-control-input"
+          id="isHideExpired"
+          [(ngModel)]="isHideExpired"
+          (change)="expiredFilter($event.target.checked)"
+        />
+        <label class="custom-control-label" for="isHideExpired">
+          Hide expired courses
+        </label>
       </div>
+    </div>
+
+    <div class="col-md-5">
+      <!-- Search form -->
+      <i class="fas fa fa-search" aria-hidden="true"></i>
+      <input
+        (keyup)="Filter($event.target.value)"
+        class="ml-3 w-75"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </div>
   </div>
-  <div class="row"> 
+  <hr />
+
+  <div class="row">
     <div *ngFor="let calendar of calendars" class="col-md-3">
       <div class="card mb-4 shadow-sm">
         <svg
           class="bd-placeholder-img card-img-top"
           width="100%"
-          height="100"
+          height="70"
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid slice"
           focusable="false"
           role="img"
           aria-label="Placeholder: Thumbnail"
         >
-          <title>{{calendar.course.name}}</title>
+          <title>
+            {{ calendar.course.name }} - {{ calendar.price | currency }}
+          </title>
           <rect width="100%" height="100%" fill="#c44569" />
-          <text style="text-transform:uppercase" x="30%" y="50%" fill="#eceeef" dy=".3em">{{calendar.course.name}}</text>
+          <text
+            style="text-transform: uppercase"
+            x="30%"
+            y="50%"
+            fill="#eceeef"
+            dy=".3em"
+          >
+            {{ calendar.course.name }}
+          </text>
+          <text
+            style="text-transform: uppercase"
+            x="75%"
+            y="80%"
+            fill="#30336b"
+            dy=".3em"
+          >
+            {{ calendar.price | currency }}
+          </text>
         </svg>
         <div class="card-body">
-          <p class="card-text">{{calendar.courseContent}}
-          </p>
+          <small class="text-muted"
+            >{{ calendar.startDateStr }} - {{ calendar.endDateStr }}
+          </small>
+
+          <p class="card-text" [innerHTML]="calendar.courseContent"></p>
           <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">     
+            <div class="btn-group">
               <div class="row col-md-12">
-                <div class="col-md-4"><a routerLink="/calendarShow/{{calendar.calendarId}}" class="fa fa-eye">
-                </a></div>
-                <div class="col-md-4"><a routerLink="/calendarDetail/{{calendar.calendarId}}" class="fa fa-edit">
-                </a></div>
-                <div class="col-md-4"><a  *ngIf="isAdminUser=='1'" class="fa fa-trash" (click)="delete(calendar.calendarId)"></a></div>
-              </div>              
+                <div class="col-md-4">
+                  <a
+                    routerLink="/calendarDetail/{{ calendar.calendarId }}"
+                    class="fa fa-edit"
+                  >
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a
+                    *ngIf="isAdminUser == '1'"
+                    class="fa fa-trash"
+                    (click)="delete(calendar.calendarId)"
+                  ></a>
+                </div>
+                <div class="col-md-4"></div>
+              </div>
             </div>
-            <small class="text-muted">{{calendar.course.duration}}  - {{calendar.price}} TL</small>
+            <small class="text-muted">
+              {{ calendar.teacher.name }} {{ calendar.teacher.surname }}
+            </small>
           </div>
         </div>
       </div>

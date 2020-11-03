@@ -42,6 +42,20 @@ namespace LYLAcademy.API.Controllers
             return teacher;
         }
 
+        // GET: api/Teachers/byUserName/teacher
+        [HttpGet("byUserName/{name}")]
+        public async Task<ActionResult<Teacher>> GetTeacherByUserName(string name)
+        {
+            var teacher = await _context.Teachers.FirstOrDefaultAsync(teacher => teacher.UserName == name);
+
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+
+            return teacher;
+        }
+
         // PUT: api/Teachers/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

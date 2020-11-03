@@ -160,9 +160,7 @@ namespace LYLAcademy.API.Controllers
         // GET: api/Calendars/byTeacher/1
         [HttpGet("byTeacher/{id}")]
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarByTeacher(int id)
-        {
-
-          
+        {         
                 var calendarList = await _context.Calendars
                     .Include(c => c.Course)
                     .Include(t => t.Teacher)
