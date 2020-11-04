@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LYLAcademy.API.Data;
 using LYLAcademy.API.Models;
+using LYLAcademy.API.Dtos;
+using AutoMapper;
 
 namespace LYLAcademy.API.Controllers
 {
@@ -15,10 +17,11 @@ namespace LYLAcademy.API.Controllers
     public class CalendarsController : ControllerBase
     {
         private readonly DataContext _context;
-
-        public CalendarsController(DataContext context)
+        private readonly IMapper _mapper;
+        public CalendarsController(DataContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Calendars
@@ -292,6 +295,30 @@ namespace LYLAcademy.API.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+
+                List<Participant> partList = new List<Participant>();
+                partList = calendar.ParticipantList;
+                foreach (Participant par in partList)
+                {
+                    _context.Entry(par).State = EntityState.Modified;
+                    try
+                    {
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!ParticipantExists(par.ParticipantId))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+
+                }
+             
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -312,8 +339,18 @@ namespace LYLAcademy.API.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Calendar>> PostCalendar(Calendar calendar)
+        public async Task<ActionResult<Calendar>> PostCalendar(CalendarAddDto calendarAddDto)
         {
+
+            Calendar calendar = new Calendar();
+            calendar = _mapper.Map<Calendar>(calendarAddDto);
+            calendar.Course = _context.Courses.Find(calendarAddDto.CourseId);
+            calendar.CourseId = calendarAddDto.CourseId;
+            calendar.Teacher = _context.Teachers.Find(calendarAddDto.TeacherId);
+            calendar.TeacherId = calendarAddDto.TeacherId;
+            calendar.ParticipantList = new List<Participant>();
+            calendar.ParticipantList.Clear();
+
             _context.Calendars.Add(calendar);
             await _context.SaveChangesAsync();
 
@@ -339,6 +376,11 @@ namespace LYLAcademy.API.Controllers
         private bool CalendarExists(int id)
         {
             return _context.Calendars.Any(e => e.CalendarId == id);
+        }
+
+        private bool ParticipantExists(int id)
+        {
+            return _context.Participants.Any(e => e.ParticipantId == id);
         }
     }
 }

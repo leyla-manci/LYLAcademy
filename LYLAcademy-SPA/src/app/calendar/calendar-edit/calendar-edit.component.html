@@ -1,3 +1,282 @@
-<p>
-  calendar-edit works!
-</p>
+<!-- Grid row -->
+<div class="row accordion-gradient-bcg d-flex justify-content-center">
+  <form class="row col-md-12  col-xl-12 py-1 px-5" #calendarEditForm="ngForm" (ngSubmit)="save()">
+    <input hidden type="number" class="form-control" id="calendarId"  name="calendarId"   [(ngModel)]="calendar.calendarId"/>
+    <div class="row col-md-12">
+      <!-- Grid column -->
+    <div class="col-md-12">
+      <!--Accordion wrapper-->
+      <div
+        class="accordion md-accordion accordion-2"
+        id="accordionEx7"
+        role="tablist"
+        aria-multiselectable="true"
+      >
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div
+            class="card-header rgba-stylish-strong z-depth-1 mb-1"
+            role="tab"
+            id="heading2"
+          >
+            <a
+              data-toggle="collapse"
+              data-parent="#accordionEx7"
+              href="#collapse2"
+              aria-expanded="true"
+              aria-controls="collapse2"
+            >
+              <h5 class="mb-0 white-text text-uppercase font-thin">
+                Scheduled Course Detail
+                <i class="fas fa fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+
+          <!-- Card body -->
+          <div
+            id="collapse2"
+            class="collapse show"
+            role="tabpanel"
+            aria-labelledby="heading2"
+            data-parent="#accordionEx7"
+          >
+            <div class="card-body mb-1 rgba-grey-light white-text">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6 p-4 align-self-center">
+                    <h5 class="font-weight-normal mb-3">Course detail</h5>
+                    <hr />
+
+                    <p class="text-muted">
+                      {{ calendar.course.name }} -
+                      {{ calendar.course.description }}
+                    </p>
+
+                    <ul class="list-unstyled font-small mt-5 mb-0">
+                      <li>
+                        <p class="text-uppercase mb-2">
+                          <strong> Standart Price</strong>
+                        </p>
+                        <p class="text-muted mb-4">
+                          {{ calendar.course.price | currency }}
+                        </p>
+                      </li>
+
+                      <li>
+                        <p class="text-uppercase mb-2">
+                          <strong>Duration</strong>
+                        </p>
+                        <p class="text-muted mb-4">
+                          {{ calendar.course.duration }}
+                        </p>
+                      </li>
+
+                      <li>
+                        <p class="text-uppercase mb-2">
+                          <strong> seasonal price </strong>
+                        </p>
+                        <p class="text-muted mb-4">
+                          {{ calendar.price | currency }}
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="col-md-6 p-3 align-self-center">
+                    <h5 class="font-weight-normal mb-3">Teacher detail</h5>
+                    <hr />
+
+                    <p class="text-muted">
+                      {{ calendar.teacher.name }}
+                      {{ calendar.teacher.surname }}
+                    </p>
+
+                    <ul class="list-unstyled font-small mt-5 mb-0">
+                      <li>
+                        <p class="text-uppercase mb-2">
+                          <strong>Qualification</strong>
+                        </p>
+                        <p class="text-muted mb-4">
+                          {{ calendar.teacher.qualification }}
+                        </p>
+                      </li>
+
+                      <li>
+                        <p class="text-uppercase mb-2">
+                          <strong>Start - End Date</strong>
+                        </p>
+                        <p class="text-muted mb-4">
+                          {{ calendar.startDateStr }} -
+                          {{ calendar.endDateStr }}
+                        </p>
+                      </li>
+
+                      <li>
+                        <p class="text-uppercase mb-2">
+                          <strong>Skills</strong>
+                        </p>
+                        <p class="text-muted mb-4">
+                          {{ calendar.teacher.compBranch }}
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div
+            class="card-header rgba-stylish-strong z-depth-1 mb-1"
+            role="tab"
+            id="heading3"
+          >
+            <a
+              class="collapsed"
+              data-toggle="collapse"
+              data-parent="#accordionEx7"
+              href="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              <h5 class="mb-0 white-text text-uppercase font-thin">
+                Course Content
+                <i class="fas fa fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+
+          <!-- Card body -->
+          <div
+            id="collapse3"
+            class="collapse"
+            role="tabpanel"
+            aria-labelledby="heading3"
+            data-parent="#accordionEx7"
+          >
+            <div class="card-body mb-1 rgba-grey-light white-text">
+              <textarea
+                type="text"
+                class=" form-control col-md-12"
+                id="courseContent"
+                [(ngModel)]="calendar.courseContent"               
+                name="courseContent" required></textarea>
+            
+            </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+        <!-- Accordion card -->
+        <div class="card">
+          <!-- Card header -->
+          <div
+            class="card-header rgba-stylish-strong z-depth-1 mb-1"
+            role="tab"
+            id="heading1"
+          >
+            <a
+              class="collapsed"
+              data-toggle="collapse"
+              data-parent="#accordionEx7"
+              href="#collapse1"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              <h5 class="mb-0 white-text text-uppercase font-thin">
+                Participant Detail
+                <i class="fas fa fa-angle-down rotate-icon"></i>
+              </h5>
+            </a>
+          </div>
+
+          <!-- Card body -->
+          <div
+            id="collapse1"
+            class="collapse"
+            role="tabpanel"
+            aria-labelledby="heading1"
+            data-parent="#accordionEx7"
+          >
+            <div class="card-body mb-1 rgba-grey-light white-text">
+              <div class="container my-5">
+                <div class="row">
+                  <table *ngIf="calendar.participantCount > 0" class="table">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Student Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Sur Name</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Paid</th>
+                        <th scope="col">Remain</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let participant of calendar.participantList;let index = index;">
+                        <th scope="row">
+                          {{ participant.student.studentId }}
+                        </th>
+                        <td>{{ participant.student.name }}</td>
+                        <td>{{ participant.student.surname }}</td>
+                        <td>
+                          {{ participant.student.userName }}
+                        </td>
+                        <td>{{ participant.student.email }}</td>
+                        <td>{{ participant.student.phone }}</td>
+                        <td>{{ participant.amount | currency }}</td>
+                        <td>
+                          <input *ngIf="isAdminUser == '1'"
+                          type="number"
+                          class=" form-control"
+                          id="amountPaid"                       
+                          (keyup)="calculateAmount(index)"
+                          [(ngModel)]="calendar.participantList[index].amountPaid"               
+                          name="amountPaid{{index}}"  required/>
+                          <span *ngIf="isAdminUser == '0'">{{ participant.amountPaid | currency }}</span>
+
+                        </td>
+                        <td>{{ participant.amountRemain | currency }}</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Accordion card -->
+      </div>
+      <!--/.Accordion wrapper-->
+    </div>
+  </div>
+  <!-- Grid column -->
+
+  <div class="row col-md-12 py-2 mx-2"> 
+    <button
+      class="btn btn-outline-primary fa fa-times pr-2"
+      routerLink="/calendar"
+    ></button>
+ 
+    <button
+    class="btn btn-outline-primary fa fa-check pr-2 mx-1"
+    type="submit" [disabled]="!calendarEditForm.valid"
+    
+  ></button>
+
+</div>
+
+</form>
+</div>
+<!-- Grid row -->

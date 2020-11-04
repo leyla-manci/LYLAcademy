@@ -82,6 +82,19 @@ export class CalendarComponent implements OnInit {
   }
 
   delete(calendarId) {
+    var calendarParticipantCount = this.calendars.find(
+      (c) => c.calendarId == calendarId
+    ).participantCount;
+
+    if (calendarParticipantCount > 0) {
+      this.alertifyService.notify(
+        'Calendar Item has ' +
+          calendarParticipantCount +
+          ' participants! You are not alloved to delete.',
+        'error'
+      );
+      return;
+    }
     this.calendarService.delete(calendarId).subscribe(
       (data) => {
         this.alertifyService.success('Calendar deleted!');
@@ -105,9 +118,13 @@ export class CalendarComponent implements OnInit {
         this.calendars[i].endDate,
         this.dateFormat
       );
-      this.calendars[i].courseContent =
-        this.calendars[i].courseContent.substring(0, 50) + ' ...';
-       this.calendars[i].participantCount= this.calendars[i].participantList.length;
+      if (this.calendars[i].courseContent.length > 50) {
+        this.calendars[i].courseContent =
+          this.calendars[i].courseContent.substring(0, 50) + ' ...';
+      }
+      this.calendars[i].participantCount = this.calendars[
+        i
+      ].participantList.length;
       i++;
     });
   }

@@ -15,6 +15,7 @@ namespace LYLAcademy.API.Helpers
             CreateMap<Student, StudentDto>();
             CreateMap<User, UserNameDto>();
             CreateMap<ParticipantAddDto, Participant>();
+            CreateMap<CalendarAddDto, Calendar>();
         }
     }
 }

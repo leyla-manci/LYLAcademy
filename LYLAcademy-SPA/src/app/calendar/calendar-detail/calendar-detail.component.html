@@ -142,7 +142,7 @@
           <div class="card-body mb-1 rgba-grey-light white-text">
             <div class="container my-5">
               <div class="row">
-                <table class="table">
+                <table *ngIf="calendar.participantCount > 0" class="table">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Student Id</th>

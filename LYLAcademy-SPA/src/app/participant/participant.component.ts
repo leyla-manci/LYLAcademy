@@ -73,8 +73,9 @@ export class ParticipantComponent implements OnInit {
         this.calendars[i].endDate,
         this.dateFormat
       );
-      this.calendars[i].courseContent =
-        this.calendars[i].courseContent.substring(0, 50) + ' ...';
+      if(this.calendars[i].courseContent.length > 50){
+        this.calendars[i].courseContent =
+          this.calendars[i].courseContent.substring(0, 50) + ' ...';}
       i++;
     });
   }

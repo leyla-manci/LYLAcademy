@@ -27,7 +27,13 @@
             <span class="help-block" *ngIf="courseAddForm.get('price').hasError('required') && courseAddForm.get('price').touched">Course price is required</span>
           </div>
         </div>
-        <button type="submit" class="btn btn-lg btn-primary btn-block col-md-6" [disabled]="!courseAddForm.valid"> Add </button>
+        <div class="form-row">
+          
+          <button type="submit" class="btn  btn-secondary " [disabled]="!courseAddForm.valid"> Add </button>
+                                    |
+          <button type="button" class="btn  btn-secondary"    routerLink="/course">Cancel</button>
+        </div>
+        
        <!-- <h6>{{courseAddForm.value|json}}</h6>
         <h6>{{courseAddForm.status|json}}</h6>-->
       </form>
