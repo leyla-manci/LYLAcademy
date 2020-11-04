@@ -59,6 +59,7 @@ export class CalendarDetailComponent implements OnInit {
     this.calendarService.getCalendarById(calendarId).subscribe(
       (data) => {
         this.calendar = data;
+        this.calendar.participantCount = this.calendar.participantList.length;
         this.calendar.startDateStr = this.datepipe.transform(
           this.calendar.startDate,
           this.dateFormat
