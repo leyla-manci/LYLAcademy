@@ -1,14 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using LYLAcademy.API.Data;
+using LYLAcademy.API.Dtos;
+using LYLAcademy.API.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LYLAcademy.API.Data;
-using LYLAcademy.API.Models;
-using LYLAcademy.API.Dtos;
-using AutoMapper;
 
 namespace LYLAcademy.API.Controllers
 {
@@ -29,53 +27,53 @@ namespace LYLAcademy.API.Controllers
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendars()
         {
             var calendarList = await _context.Calendars
-                .Include(c=>c.Course)
-                .Include(t=>t.Teacher)
+                .Include(c => c.Course)
+                .Include(t => t.Teacher)
                 .Include(p => p.ParticipantList).ToListAsync();
-       
-                if (calendarList == null)
+
+            if (calendarList == null)
+            {
+                return NotFound();
+            }
+
+            for (int i = 0; i < calendarList.Count(); i++)
+            {
+                if (calendarList[i].ParticipantList == null)
                 {
-                    return NotFound();
+
+                    List<Participant> participant = _context.Participants.Where(part => part.CalendarId == calendarList[i].CalendarId).ToList();
+                    if (participant != null)
+                    {
+                        calendarList[i].ParticipantList.Clear();
+                        calendarList[i].ParticipantList = participant;
+                    }
                 }
-
-                for (int i = 0; i < calendarList.Count(); i++)
+                if (calendarList[i].Teacher.TeacherId == 0)
                 {
-                    if (calendarList[i].ParticipantList == null)
+
+                    Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
+                    if (teacher != null)
                     {
-
-                        List<Participant> participant = _context.Participants.Where(part => part.CalendarId == calendarList[i].CalendarId).ToList();
-                        if (participant != null)
-                        {
-                            calendarList[i].ParticipantList.Clear();
-                            calendarList[i].ParticipantList = participant;
-                        }
+                        calendarList[i].Teacher = teacher;
                     }
-                    if (calendarList[i].Teacher.TeacherId == 0)
+                }
+                if (calendarList[i].Course.CourseId == 0)
+                {
+
+                    Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                    if (course != null)
                     {
-
-                        Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
-                        if (teacher != null)
-                        {
-                            calendarList[i].Teacher = teacher;
-                        }
+                        calendarList[i].Course = course;
                     }
-                    if (calendarList[i].Course.CourseId == 0)
-                    {
-
-                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
-                        if (course != null)
-                        {
-                            calendarList[i].Course = course;
-                        }
-                    }
-
-
-
                 }
 
 
-                return calendarList;
-            
+
+            }
+
+
+            return calendarList;
+
         }
 
         // GET: api/Calendars/5
@@ -86,8 +84,8 @@ namespace LYLAcademy.API.Controllers
                 .Include(c => c.Course)
                 .Include(t => t.Teacher)
                 .Include(p => p.ParticipantList)
-                .ThenInclude(s=>s.Student)
-                .FirstOrDefaultAsync(calendar=> calendar.CalendarId == id);
+                .ThenInclude(s => s.Student)
+                .FirstOrDefaultAsync(calendar => calendar.CalendarId == id);
 
             if (calendar == null)
             {
@@ -101,14 +99,14 @@ namespace LYLAcademy.API.Controllers
         [HttpGet("byParticipant/{id}")]
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarByParticipant(int id)
         {
-            
-            var calIdList =  _context.Participants.Where(part => part.StudentId == id).Select(x=>x.CalendarId).ToList();
-            if(calIdList!= null)
+
+            var calIdList = _context.Participants.Where(part => part.StudentId == id).Select(x => x.CalendarId).ToList();
+            if (calIdList != null)
             {
                 var calendarList = await _context.Calendars
                     .Include(c => c.Course)
                     .Include(t => t.Teacher)
-                    .Include(p=>p.ParticipantList)
+                    .Include(p => p.ParticipantList)
                     .Where(calendar =>
                     calIdList.Contains(calendar.CalendarId)).ToListAsync();
 
@@ -116,10 +114,11 @@ namespace LYLAcademy.API.Controllers
                 {
                     return NotFound();
                 }
-                
-                for (int i = 0; i < calendarList.Count();i++)
+
+                for (int i = 0; i < calendarList.Count(); i++)
                 {
-                    if(calendarList[i].ParticipantList == null) {
+                    if (calendarList[i].ParticipantList == null)
+                    {
 
                         Participant participant = _context.Participants.FirstOrDefault(part => part.StudentId == id
                       && part.CalendarId == calendarList[i].CalendarId);
@@ -153,70 +152,70 @@ namespace LYLAcademy.API.Controllers
 
                 }
 
-             
+
                 return calendarList;
             }
 
             return null;
 
-            
+
         }
 
 
         // GET: api/Calendars/byTeacher/1
         [HttpGet("byTeacher/{id}")]
         public async Task<ActionResult<IEnumerable<Calendar>>> GetCalendarByTeacher(int id)
-        {         
-                var calendarList = await _context.Calendars
-                    .Include(c => c.Course)
-                    .Include(t => t.Teacher)
-                    .Include(p => p.ParticipantList)
-                    .Where(calendar =>calendar.TeacherId == id).ToListAsync();
+        {
+            var calendarList = await _context.Calendars
+                .Include(c => c.Course)
+                .Include(t => t.Teacher)
+                .Include(p => p.ParticipantList)
+                .Where(calendar => calendar.TeacherId == id).ToListAsync();
 
-                if (calendarList == null)
+            if (calendarList == null)
+            {
+                return NotFound();
+            }
+
+            for (int i = 0; i < calendarList.Count(); i++)
+            {
+                if (calendarList[i].ParticipantList == null)
                 {
-                    return NotFound();
+
+                    List<Participant> participant = _context.Participants.Where(part => part.CalendarId == calendarList[i].CalendarId).ToList();
+                    if (participant != null)
+                    {
+                        calendarList[i].ParticipantList.Clear();
+                        calendarList[i].ParticipantList = participant;
+                    }
                 }
-
-                for (int i = 0; i < calendarList.Count(); i++)
+                if (calendarList[i].Teacher.TeacherId == 0)
                 {
-                    if (calendarList[i].ParticipantList == null)
+
+                    Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
+                    if (teacher != null)
                     {
-
-                        List<Participant> participant = _context.Participants.Where(part =>  part.CalendarId == calendarList[i].CalendarId).ToList();
-                        if (participant != null)
-                        {
-                            calendarList[i].ParticipantList.Clear();
-                            calendarList[i].ParticipantList = participant;
-                        }
+                        calendarList[i].Teacher = teacher;
                     }
-                    if (calendarList[i].Teacher.TeacherId == 0)
+                }
+                if (calendarList[i].Course.CourseId == 0)
+                {
+
+                    Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                    if (course != null)
                     {
-
-                        Teacher teacher = _context.Teachers.FirstOrDefault(part => part.TeacherId == calendarList[i].TeacherId);
-                        if (teacher != null)
-                        {
-                            calendarList[i].Teacher = teacher;
-                        }
+                        calendarList[i].Course = course;
                     }
-                    if (calendarList[i].Course.CourseId == 0)
-                    {
-
-                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
-                        if (course != null)
-                        {
-                            calendarList[i].Course = course;
-                        }
-                    }
-
-
-
-
                 }
 
 
-                return calendarList;
-           
+
+
+            }
+
+
+            return calendarList;
+
 
 
         }
@@ -243,7 +242,7 @@ namespace LYLAcademy.API.Controllers
 
                 for (int i = 0; i < calendarList.Count(); i++)
                 {
-                    
+
                     if (calendarList[i].Teacher.TeacherId == 0)
                     {
 
@@ -318,7 +317,7 @@ namespace LYLAcademy.API.Controllers
                     }
 
                 }
-             
+
             }
             catch (DbUpdateConcurrencyException)
             {

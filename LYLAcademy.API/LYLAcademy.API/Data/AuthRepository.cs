@@ -1,9 +1,5 @@
 ﻿using LYLAcademy.API.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace LYLAcademy.API.Data
@@ -17,8 +13,8 @@ namespace LYLAcademy.API.Data
         }
         public async Task<User> Login(string userName, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(user => (user.Name==userName &&  user.Password == password));
-            if(user == null)
+            var user = await _context.Users.FirstOrDefaultAsync(user => (user.Name == userName && user.Password == password));
+            if (user == null)
             {
                 return null;
             }
@@ -33,13 +29,13 @@ namespace LYLAcademy.API.Data
             await _context.Users.AddAsync(user);
             await _context.SaveChangesAsync();
 
-           
+
             return user;
         }
 
         public async Task<bool> UserExists(string userName)
         {
-            if (await _context.Users.AnyAsync(x=>x.Name == userName))
+            if (await _context.Users.AnyAsync(x => x.Name == userName))
             {
                 return true;
             }

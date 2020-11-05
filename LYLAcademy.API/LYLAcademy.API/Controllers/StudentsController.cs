@@ -1,12 +1,10 @@
-﻿using System;
+﻿using LYLAcademy.API.Data;
+using LYLAcademy.API.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LYLAcademy.API.Data;
-using LYLAcademy.API.Models;
 
 namespace LYLAcademy.API.Controllers
 {

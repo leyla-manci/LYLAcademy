@@ -1,14 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using LYLAcademy.API.Data;
+using LYLAcademy.API.Dtos;
+using LYLAcademy.API.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LYLAcademy.API.Data;
-using LYLAcademy.API.Models;
-using LYLAcademy.API.Dtos;
-using AutoMapper;
 
 namespace LYLAcademy.API.Controllers
 {
@@ -84,7 +82,7 @@ namespace LYLAcademy.API.Controllers
         public async Task<ActionResult<Participant>> PostParticipant(ParticipantAddDto participantDto)
         {
             Participant participant = new Participant();
-             participant = _mapper.Map<Participant>(participantDto);
+            participant = _mapper.Map<Participant>(participantDto);
             participant.Student = _context.Students.Find(participantDto.StudentId);
             participant.StudentId = participantDto.StudentId;
             _context.Participants.Add(participant);

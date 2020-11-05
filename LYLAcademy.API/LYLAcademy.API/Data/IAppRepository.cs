@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LYLAcademy.API.Data
+﻿namespace LYLAcademy.API.Data
 {
-   public interface IAppRepository
+    public interface IAppRepository
     {
     }
 }

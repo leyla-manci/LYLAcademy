@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace LYLAcademy.API.Models
+﻿namespace LYLAcademy.API.Models
 {
     public class Teacher
     {
         public Teacher()
         {
-           // CalendarList = new List<Calendar>();
+            // CalendarList = new List<Calendar>();
         }
         public int TeacherId { get; set; }
         public string Name { get; set; }
@@ -19,7 +14,7 @@ namespace LYLAcademy.API.Models
         public string CompBranch { get; set; }
         public int IsDelete { get; set; }
 
-       // public List<Calendar> CalendarList { get; set; }
+        // public List<Calendar> CalendarList { get; set; }
 
     }
 }

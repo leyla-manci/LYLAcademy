@@ -1,14 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using LYLAcademy.API.Data;
+using LYLAcademy.API.Dtos;
+using LYLAcademy.API.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using LYLAcademy.API.Data;
-using LYLAcademy.API.Models;
-using AutoMapper;
-using LYLAcademy.API.Dtos;
 
 namespace LYLAcademy.API.Controllers
 {
@@ -127,7 +125,7 @@ namespace LYLAcademy.API.Controllers
         }
 
         // DELETE: api/Users/5
-        [HttpDelete("{id}")]        
+        [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {
             var user = await _context.Users.FindAsync(id);
