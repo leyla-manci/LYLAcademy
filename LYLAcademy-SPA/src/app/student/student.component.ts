@@ -20,8 +20,8 @@ export class StudentComponent implements OnInit {
     private alertifyService:AlertifyService
   ) {}
 
-  students: Student[];
-  studentsAll: Student[];
+  students: Student[] = [];
+  studentsAll: Student[] = [];
   ngOnInit() {
     this.refresh();
   }

@@ -18,8 +18,8 @@ export class CourseComponent implements OnInit {
     private router: Router,
     private alertifyService: AlertifyService
   ) {}
-  courses: Course[];
-  coursesAll: Course[];
+  courses: Course[] = [];
+  coursesAll: Course[] = [];
   ngOnInit() {
     this.refresh();
   }

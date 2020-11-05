@@ -21,8 +21,8 @@ export class TeacherComponent implements OnInit {
     private alertifyService:AlertifyService
   ) {}
 
-  teachers: Teacher[];
-  teachersAll: Teacher[];
+  teachers: Teacher[] = [];
+  teachersAll: Teacher[] = [];
   ngOnInit() {
     this.refresh();
   }

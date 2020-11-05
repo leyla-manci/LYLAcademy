@@ -25,8 +25,8 @@ export class CalendarComponent implements OnInit {
     private participantService: ParticipantService,
     public datepipe: DatePipe
   ) {}
-  calendars: Calendar[];
-  calendarsAll: Calendar[];
+  calendars: Calendar[] = [];
+  calendarsAll: Calendar[] = [];
   showOtherCourseList = false;
   isHideExpired = false;
   teacher: Teacher;

@@ -9,8 +9,8 @@ import { CourseService } from '../services/course.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private courseService: CourseService) {}
-  courses: Course[];
-  coursesAll: Course[];
+  courses: Course[] = [];
+  coursesAll: Course[] = [];
   ngOnInit() {
     this.courseService.getCourses().subscribe((data) => {
       this.courses = data;

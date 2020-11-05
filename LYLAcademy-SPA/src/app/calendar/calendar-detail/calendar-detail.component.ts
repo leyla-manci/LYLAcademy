@@ -34,7 +34,7 @@ export class CalendarDetailComponent implements OnInit {
   isShowtoJoin = false;
   calendar: Calendar;
   participant: Participant;
-  participantList: Participant[];
+  participantList: Participant[] = [];
   student: Student;
   teacher:Teacher;
   dateFormat = 'dd MM yyyy';

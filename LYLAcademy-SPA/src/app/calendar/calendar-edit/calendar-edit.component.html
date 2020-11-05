@@ -207,7 +207,12 @@
             <div class="card-body mb-1 rgba-grey-light white-text">
               <div class="container my-5">
                 <div class="row">
-                  <table *ngIf="calendar.participantCount > 0" class="table">
+                  <div  *ngIf="!(calendar.participantCount > 0)" class="row">
+                    <div class="alert alert-info" role="alert">
+                      No Records Found! 
+                    </div>
+                  </div>
+                  <table *ngIf="(calendar.participantCount > 0)" class="table">
                     <thead class="thead-light">
                       <tr>
                         <th scope="col">Student Id</th>

@@ -32,8 +32,12 @@
     </div>
   </div>
   <hr />
-
-  <div class="row">
+  <div  *ngIf="!(calendars.length > 0)"  class="row">
+    <div class="alert alert-info" role="alert">
+      No Records Found! 
+    </div>
+  </div>
+  <div  *ngIf="(calendars.length > 0)" class="row">
     <div *ngFor="let calendar of calendars" class="col-md-3">
 
       <div class="card mb-4 shadow-sm">

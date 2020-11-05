@@ -26,8 +26,8 @@ export class ParticipantComponent implements OnInit {
     private participantService: ParticipantService,
     public datepipe: DatePipe
   ) {}
-  calendars: Calendar[];
-  calendarsAll: Calendar[];
+  calendars: Calendar[] = [];
+  calendarsAll: Calendar[] = [];
   participantAdd: ParticipantAdd = new ParticipantAdd();
   showOtherCourseList = false;
   isHideExpired = false;

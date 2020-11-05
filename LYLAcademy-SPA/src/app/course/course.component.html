@@ -25,7 +25,12 @@
     </div>
   </div>
   <hr/> 
-  <div class="row">   
+  <div  *ngIf="!(courses.length > 0)"  class="row">
+    <div class="alert alert-info" role="alert">
+      No Records Found! 
+    </div>
+  </div>
+  <div *ngIf="courses.length > 0" class="row">   
       <div *ngFor="let course of courses" class="col-md-3">
         <div class="card mb-4 shadow-sm">
           <svg

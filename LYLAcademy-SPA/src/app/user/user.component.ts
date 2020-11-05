@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
     private _script: ScriptLoaderService
   ) {}
 
-  users: User[];
+  users: User[] = [];
   ngOnInit() {
   
     this.refresh();
