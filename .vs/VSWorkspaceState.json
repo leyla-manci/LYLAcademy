@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\LYLAcademy-SPA",
-    "\\LYLAcademy.API"
+    "\\LYLAcademy.API",
+    "\\LYLAcademy.API\\LYLAcademy.API",
+    "\\LYLAcademy.API\\LYLAcademy.API\\Controllers"
   ],
-  "SelectedNode": "\\LYLAcademy.API\\LYLAcademy.API.sln",
   "PreviewInSolutionExplorer": false
 }
