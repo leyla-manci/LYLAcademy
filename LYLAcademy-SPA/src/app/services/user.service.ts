@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from '../models/User';
 import { UserName } from '../models/UserName';
 import { AlertifyService } from './alertify.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ constructor(
   private router: Router) { }
 
 
-  path = 'https://localhost:44378/api/';
+ // path = 'https://localhost:44378/api/';
+  path = environment.baseUrl + '/';
 
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(this.path + 'users');

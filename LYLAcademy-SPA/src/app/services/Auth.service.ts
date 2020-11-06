@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AlertifyService } from './alertify.service';
 import { RegisterUser } from '../models/registerUser';
 import { UserService } from './user.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,8 @@ export class AuthService {
     private router: Router,
     private alertifyService: AlertifyService
   ) {}
-  path = 'https://localhost:44378/api/auth/';
+ // path = 'https://localhost:44378/api/auth/';
+  path = environment.baseUrl + '/auth/';
   userToken: any;
   decodeToken: any;
   TOKEN_KEY = 'token';

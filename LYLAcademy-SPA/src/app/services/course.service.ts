@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Course } from '../models/Course';
 import { AlertifyService } from './alertify.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,8 @@ export class CourseService {
     private router: Router
   ) {}
 
-  path = 'https://localhost:44378/api/';
+  //path = 'https://localhost:44378/api/';
+  path = environment.baseUrl + '/';
 
   getCourses(): Observable<Course[]> {
     return this.httpClient.get<Course[]>(this.path + 'courses');

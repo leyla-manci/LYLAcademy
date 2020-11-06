@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Participant } from '../models/Participant';
 import { ParticipantAdd } from '../models/ParticipantAdd';
 import { AlertifyService } from './alertify.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,8 @@ export class ParticipantService {
     private router: Router
   ) {}
 
-  path = 'https://localhost:44378/api/';
+  //path = 'https://localhost:44378/api/';
+  path = environment.baseUrl + '/';
 
   getParticipants(): Observable<Participant[]> {
     return this.httpClient.get<Participant[]>(this.path + 'participants');
