@@ -46,15 +46,15 @@
 </tr>
 <tr>
 <td><strong>Courses</strong></td>
-<td>This table contain course detail Name, Duration and Fees detail.</td>
+<td>This table contain course detail Name, Duration and standart price detail.</td>
 </tr>
 <tr>
 <td><strong>Teachers</strong></td>
-<td>Table contain teacher detail Name, Qualification detail and Course detail.</td>
+<td>Table contain user name, teacher detail Name, Qualification detail </td>
 </tr>
 <tr>
 <td><strong>Students</strong></td>
-<td>Table store all the detail of student Personal detail, Education detail, Course and Fees Detail.</td>
+<td>Table contain user name, student detail Name, contact detail </td>
 </tr>
 <tr>
 <td><strong>Users</strong></td>
@@ -62,11 +62,11 @@
 </tr>
   <tr>
 <td><strong>Calendars</strong></td>
-<td>Table Store username and password detail for login purpose.</td>
+<td>Table store all the detail of  scheduled course , content , price, course, participants and Fees Detail.</td>
 </tr>
   <tr>
 <td><strong>Participants</strong></td>
-<td>Table Store username and password detail for login purpose.</td>
+<td>Table store the participant and scheduled course relation.</td>
 </tr>
 </tbody>
 </table>
