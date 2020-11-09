@@ -13,7 +13,7 @@
       <li  *ngIf="isAuthenticated && isStudentUser=='1'"  class="nav-item">
         <a class="nav-link" routerLink="participant" routerLinkActive="active">Syllabus</a>
       </li>
-      <li  *ngIf="isAuthenticated  && isTeacherUser=='1'"  class="nav-item">
+      <li  *ngIf="isAuthenticated  &&  (isTeacherUser=='1' || isAdminUser=='1')"  class="nav-item">
         <a class="nav-link" routerLink="calendar" routerLinkActive="active">Schedule</a>
       </li>    
       <li  *ngIf="isAuthenticated && isAdminUser=='1'"  class="nav-item  dropdown">
