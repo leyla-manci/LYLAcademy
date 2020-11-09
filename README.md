@@ -3,17 +3,16 @@
 
 <div class="entry-content clearfix" style="height: auto !important;">
 
-<h2>Academy Management System Project </br> (ASP.NET CORE MVC Web API + Angular 10 + SQL Server 2019)</h2>
+<h2>Academy Management System Project in Agular</h2>
 <p>Lets, start to develop <a href="https://meeraacademy.com/download-windows-form-application-project-in-c-net/" target="_blank" rel="noopener noreferrer">c#.net project</a> for student management system using visual studio 2010.</p>
 <p>All students can easily learn about visual studio .Net and SQL server and they may be expertise with it. Most of the students don’t have an idea about how to start a project or web application in visual studio .Net. They know all the other things related to project like documentation, diagram, ppt, but they don’t understand what is the first step to start website or windows application project in C#.Net.</p>
 <p>In this c#.net post we will learn step by step to develop student management system software windows application project in visual studio 2010 using <a href="https://meeraacademy.com/asp-net/" target="_blank" rel="noopener noreferrer">c# Language.</a></p>
 <hr>
-<h2>Student Management System Project</h2>
 <table>
 <tbody>
 <tr>
 <th style="text-align: left; width: 21%;">Project Title :</th>
-<th style="text-align: left;">&nbsp;Student Management System</th>
+<th style="text-align: left;">&nbsp;Academy Management System</th>
 </tr>
 <tr>
 <td><strong>Abstract :</strong></td>
@@ -21,15 +20,15 @@
 </tr>
 <tr>
 <td><strong>Project Type :</strong></td>
-<td>&nbsp;Desktop / Windows Application</td>
+<td>&nbsp;Web / Windows Application  </td>
 </tr>
 <tr>
 <td><strong>Technology :</strong></td>
-<td>Visual Studio 2010 with C# Language</td>
+<td>Visual Studio 2019 with C#,HTML,CSS,JS,Typscript Language</br> (ASP.NET CORE MVC Web API + Angular 10 + SQL Server 2019)</td>
 </tr>
 <tr>
 <td><strong>Database :</strong></td>
-<td>SQL-Server 2008 Database</td>
+<td>SQL-Server 2019 Database</td>
 </tr>
 </tbody>
 </table>
