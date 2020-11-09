@@ -88,11 +88,11 @@
 <hr>
 <h3>ADD Fees Form</h3>
 <p>This student fees form used to maintain student fees detail. Admin makes fees entry when student paid fees to institute. This form very useful to maintain fess status by paid fees and remaining fees.</p>
-<figure id="attachment_6748" aria-describedby="caption-attachment-6748" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6748" src="https://meeraacademy.com/wp-content/uploads/2017/08/addfees.gif" alt="Student Management System" width="554" height="410"><figcaption id="caption-attachment-6748" class="wp-caption-text">Add Fees Form – Student Management System C#.Net</figcaption></figure>
+<figure id="attachment_6748" aria-describedby="caption-attachment-6748" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6748" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/scheduled-course-detail.png" alt="Student Management System" width="554" height="410"><figcaption id="caption-attachment-6748" class="wp-caption-text">Add Fees Form – Student Management System C#.Net</figcaption></figure>
 <hr>
 <h3>Student Search Form</h3>
 <p>Here, we provide search facility by student name wise, course wise, teacher wise and fees status wise.</p>
-<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://meeraacademy.com/wp-content/uploads/2017/08/searchpage.png" alt="student management software" width="792" height="157" srcset="https://meeraacademy.com/wp-content/uploads/2017/08/searchpage.png 792w, https://meeraacademy.com/wp-content/uploads/2017/08/searchpage-300x59.png 300w, https://meeraacademy.com/wp-content/uploads/2017/08/searchpage-768x152.png 768w, https://meeraacademy.com/wp-content/uploads/2017/08/searchpage-500x99.png 500w" sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text">Student Search Form – Student Management System C#.Net</figcaption></figure>
+<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-list.png" alt="student management software" width="792" height="157"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text">Student Search Form – Student Management System C#.Net</figcaption></figure>
 <hr>
 <p>This student management software system has some more forms like :</p>
 <ul>
