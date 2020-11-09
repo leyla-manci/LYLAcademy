@@ -37,7 +37,7 @@
 <p>The first step to develop dynamic software system we need to use database server to store the records permanently. Here, we use SQL Server database to keep the data.</p>
 <figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/db-diagram.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"> </br>Database detail – LYL Academy</figcaption></figure>
 <h3>SQL server database table detail</h3>
-<p>Here, In this student software we need to create four table in <a href="https://meeraacademy.com/sql/" target="_blank" rel="noopener noreferrer">sql server</a>.</p>
+<p>Here, database script for this academy software to create tables in <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/sql_server_2019_LYL_Academy_db.sql" target="_blank" rel="noopener noreferrer">sql server</a>.</p>
 <table>
 <tbody>
 <tr>
@@ -45,19 +45,27 @@
 <th style="text-align: left;">&nbsp;Description</th>
 </tr>
 <tr>
-<td><strong>CourseMst</strong></td>
+<td><strong>Courses</strong></td>
 <td>This table contain course detail Name, Duration and Fees detail.</td>
 </tr>
 <tr>
-<td><strong>TeacherMst</strong></td>
+<td><strong>Teachers</strong></td>
 <td>Table contain teacher detail Name, Qualification detail and Course detail.</td>
 </tr>
 <tr>
-<td><strong>StudentMst</strong></td>
+<td><strong>Students</strong></td>
 <td>Table store all the detail of student Personal detail, Education detail, Course and Fees Detail.</td>
 </tr>
 <tr>
-<td><strong>UserMst</strong></td>
+<td><strong>Users</strong></td>
+<td>Table Store username and password detail for login purpose.</td>
+</tr>
+  <tr>
+<td><strong>Calendars</strong></td>
+<td>Table Store username and password detail for login purpose.</td>
+</tr>
+  <tr>
+<td><strong>Participants</strong></td>
 <td>Table Store username and password detail for login purpose.</td>
 </tr>
 </tbody>
