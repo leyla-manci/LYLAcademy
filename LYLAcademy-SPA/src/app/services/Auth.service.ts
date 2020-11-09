@@ -1,12 +1,21 @@
+/*       Code with ❤  ´• ل •`   ❤
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬     Created by Leyla Akmancı                 ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     leyla.manci@gmail.com                    ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     ../11/2020 - ..:..                       ▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+ */
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginUser } from '../models/loginUser';
-import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
+//import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import { Router } from '@angular/router';
 import { AlertifyService } from './alertify.service';
 import { RegisterUser } from '../models/registerUser';
-import { UserService } from './user.service';
 import { environment } from 'src/environments/environment';
+import { JwtHelperService } from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +24,8 @@ export class AuthService {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private alertifyService: AlertifyService
+    private alertifyService: AlertifyService,
+    private helper :JwtHelperService
   ) {}
  // path = 'https://localhost:44378/api/auth/';
   path = environment.baseUrl + '/auth/';
@@ -23,7 +33,10 @@ export class AuthService {
   decodeToken: any;
   TOKEN_KEY = 'token';
   defaultStr = '';
-  jwtHelper: JwtHelper = new JwtHelper();
+  //jwtHelper: JwtHelper = new JwtHelper();
+
+
+ 
   login(loginUser: LoginUser) {
     let headers = new HttpHeaders();
     headers = headers.append('Content-Type', 'application/json');
@@ -33,7 +46,8 @@ export class AuthService {
         (data) => {
           this.saveToken(data['resultString']);
           this.userToken = data['resultString'];
-          this.decodeToken = this.jwtHelper.decodeToken(data['resultString']);
+          //this.decodeToken = this.jwtHelper.decodeToken(data['resultString']);
+          this.decodeToken = this.helper.decodeToken(data['resultString']);
           this.alertifyService.success('Login is successful.');
         },
         (error) => {
@@ -77,7 +91,8 @@ export class AuthService {
     this.alertifyService.error('Logout is successful.');
   }
   loggedIn() {
-    return tokenNotExpired(this.TOKEN_KEY);
+   // return tokenNotExpired(this.TOKEN_KEY);
+   return  !this.helper.isTokenExpired(this.token);
   }
   get token() {
     return localStorage.getItem(this.TOKEN_KEY);
@@ -87,7 +102,8 @@ export class AuthService {
     if (this.token == null) {
       return '0';
     } else {
-      return this.jwtHelper.decodeToken(this.token).nameId;
+     // return this.jwtHelper.decodeToken(this.token).nameId;
+     return this.helper.decodeToken(this.token).nameId;
     }
   }
 
@@ -95,28 +111,32 @@ export class AuthService {
     if (this.token == null) {
       return 'LYL Academy';
     } else {
-      return this.jwtHelper.decodeToken(this.token).userName;
+      //return this.jwtHelper.decodeToken(this.token).userName;
+      return this.helper.decodeToken(this.token).userName;
     }
   }
   isAdmin() {
     if (this.token == null) {
       return '0';
     } else {
-      return this.jwtHelper.decodeToken(this.token).isAdmin;
+      //return this.jwtHelper.decodeToken(this.token).isAdmin;
+      return this.helper.decodeToken(this.token).isAdmin;
     }
   }
   isTeacher() {
     if (this.token == null) {
       return '0';
     } else {
-      return this.jwtHelper.decodeToken(this.token).isTeacher;
+     // return this.jwtHelper.decodeToken(this.token).isTeacher;
+     return this.helper.decodeToken(this.token).isTeacher;
     }
   }
   isStudent() {
     if (this.token == null) {
       return '0';
     } else {
-      return this.jwtHelper.decodeToken(this.token).isStudent;
+     // return this.jwtHelper.decodeToken(this.token).isStudent;
+     return this.helper.decodeToken(this.token).isStudent;
     }
   }
 }

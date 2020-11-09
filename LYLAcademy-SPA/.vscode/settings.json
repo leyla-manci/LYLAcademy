@@ -1,5 +1,5 @@
 {
     "appService.showBuildDuringDeployPrompt": false,
-    "appService.defaultWebAppToDeploy": "/subscriptions/3ca16308-c085-4b52-9f4a-df4e5986ac01/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/lylacademy",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/3ca16308-c085-4b52-9f4a-df4e5986ac01/resourceGroups/LYL/providers/Microsoft.Web/sites/lylacademy3"
 }

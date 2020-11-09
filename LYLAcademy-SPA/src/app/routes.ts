@@ -1,3 +1,12 @@
+/*       Code with ❤  ´• ل •`   ❤
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬     Created by Leyla Akmancı                 ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     leyla.manci@gmail.com                    ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     ../11/2020 - ..:..                       ▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+ */
 import { CourseComponent } from './course/course.component';
 import { Routes } from '@angular/router';
 import { CourseDetailComponent } from './course/course-detail/course-detail.component';

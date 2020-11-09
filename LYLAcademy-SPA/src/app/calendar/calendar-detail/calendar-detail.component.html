@@ -141,13 +141,13 @@
         <div id="collapse1" class="collapse" role="tabpanel" aria-labelledby="heading1" data-parent="#accordionEx7">
           <div class="card-body mb-1 rgba-grey-light white-text">
             <div class="container my-5">
-              <div class="row">
+              <div class="row table-responsive-md">
                 <div  *ngIf="!(calendar.participantCount > 0)"  class="row">
                   <div class="alert alert-info" role="alert">
                     No Records Found! 
                   </div>
                 </div>
-                <table *ngIf="calendar.participantCount > 0" class="table">
+                <table *ngIf="calendar.participantCount > 0" class="table table-responsive-md">
                   <thead class="thead-light">
                     <tr>
                       <th scope="col">Student Id</th>

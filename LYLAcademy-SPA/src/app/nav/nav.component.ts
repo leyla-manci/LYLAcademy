@@ -1,9 +1,17 @@
+/*       Code with ❤  ´• ل •`   ❤
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬     Created by Leyla Akmancı                 ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     leyla.manci@gmail.com                    ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     ../11/2020 - ..:..                       ▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+ */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { LoginUser } from '../models/loginUser';
 import { User } from '../models/User';
 import { AlertifyService } from '../services/alertify.service';
 import { AuthService } from '../services/Auth.service';
-import { ScriptLoaderService } from '../services/script-loader.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -15,8 +23,7 @@ export class NavComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private alertifyService: AlertifyService,
-    private userService: UserService,    
-    private _script: ScriptLoaderService
+    private userService: UserService,  
   ) {
     this.userN = "LYL Academy";
   }

@@ -1,9 +1,20 @@
+/*       Code with ❤  ´• ل •`   ❤
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬     Created by Leyla Akmancı                 ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     leyla.manci@gmail.com                    ▬
+▬     ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬    ▬
+▬     ../11/2020 - ..:..                       ▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+ */
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Calendar } from 'src/app/models/Calendar';
+import { Course } from 'src/app/models/Course';
 import { Participant } from 'src/app/models/Participant';
 import { Student } from 'src/app/models/Student';
+import { Teacher } from 'src/app/models/Teacher';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { AuthService } from 'src/app/services/Auth.service';
 import { CalendarService } from 'src/app/services/calendar.service';
@@ -29,12 +40,14 @@ export class ParticipantDetailComponent implements OnInit {
   ) {}
   calendarId = 0;
   isShowtoJoin = false;
-  calendar: Calendar;
-  participant: Participant;
-  student: Student;
+  calendar: Calendar = new Calendar();
+  participant: Participant = new Participant();
+  student: Student = new Student();
   dateFormat = 'dd MM yyyy';
 
   ngOnInit() {
+    this.calendar.course = new Course();
+    this.calendar.teacher = new Teacher();
     this.activatedRoute.queryParams.subscribe((params) => {
       this.calendarId = params['calendarId'];
       if (params['showToJoin'] == 'false') {

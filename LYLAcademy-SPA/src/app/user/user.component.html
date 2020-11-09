@@ -23,9 +23,11 @@
                 
                 <div class="example-container mat-elevation-z8">
                     <div class="">
-                        <mat-form-field style="width: 98%;">
-                            <input matInput (keyup)="Filter($event.target.value)" placeholder="Filter">
+                     
+                        <mat-form-field style="width: 45%; margin-left: 50%;">                         
+                            <input matInput (keyup)="Filter($event.target.value)" placeholder="Filter">                           
                         </mat-form-field>
+                        <i class="fas fa fa-search" aria-hidden="true"></i>
                     </div>
                     <mat-table #Table [dataSource]="MyDataSource" matSort>
             

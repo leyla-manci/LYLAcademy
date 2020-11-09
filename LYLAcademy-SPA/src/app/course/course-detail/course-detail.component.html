@@ -12,17 +12,18 @@
         </div>
         <div class="form-row">
           <div class=" form-group col-md-6">
-            <input type="text" class="form-control" id="duration" formControlName="duration" placeholder="Duration"   name="duration"   [(ngModel)]="course.duration" />
-            <span class="help-block" *ngIf="courseEditForm.get('duration').hasError('required') && courseEditForm.get('duration').touched">Duration is required</span>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class=" form-group col-md-6">
             <input type="text" class="form-control" id="description" formControlName="description" placeholder="Description"  name="description"   [(ngModel)]="course.description" />
             <span class="help-block" *ngIf="courseEditForm.get('description').hasError('required') && courseEditForm.get('description').touched">Description is required</span>
              
           </div>
         </div>
+        <div class="form-row">
+          <div class=" form-group col-md-6">
+            <input type="text" class="form-control" id="duration" formControlName="duration" placeholder="Duration"   name="duration"   [(ngModel)]="course.duration" />
+            <span class="help-block" *ngIf="courseEditForm.get('duration').hasError('required') && courseEditForm.get('duration').touched">Duration is required</span>
+          </div>
+        </div>
+
         <div class="form-row">
           <div class=" form-group col-md-6">
             <input type="number" class="form-control" id="price" formControlName="price" placeholder="Price"   name="price"   [(ngModel)]="course.price"/>

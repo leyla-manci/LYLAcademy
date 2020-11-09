@@ -7,10 +7,9 @@
       "secretStore": "AzureAppSettings"
     },
     "appInsights1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/microsoft.insights/components/LYLAcademy.API",
-      "type": "appInsights.azure",
-      "connectionId": "APPINSIGHTS_INSTRUMENTATIONKEY",
-      "secretStore": "AzureAppSettings"
+      "type": "appInsights",
+      "suggestion": "true",
+      "ignored": "true"
     }
   }
 }
