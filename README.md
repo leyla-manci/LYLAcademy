@@ -5,7 +5,7 @@
 
 <h2>Academy Management System Project in Agular</h2>
 <p>Lets, start to develop <a href="https://docs.google.com/document/d/1yrtlmIII0MFqdWFSrzLakv9fCF-z7oZgY5Ug_CPLA24/edit" target="_blank" rel="noopener noreferrer">c#.net project</a> for student management system </p>
-<p> <a href="https://lylacademy4.azurewebsites.net/">Angular project azure link </a></p>
+<p> <a href="https://lylacademy4.azurewebsites.net/">Angular project azure link </a> login : user admin , password : admin </p>
 <table>
 <tbody>
 <tr>
