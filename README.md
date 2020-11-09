@@ -71,18 +71,16 @@
 </tbody>
 </table>
 <hr>
-<p>After done above database work open visual studio 2010 and create windows application using c# language. Then create and design windows form for adding course detail, teacher detail, student detail, fees detail, user detail and search page.</p>
-<p>let’s understand all windows form one by one with screen to more understand about student software.</p>
 <h3>ADD Course Form</h3>
 <hr>
-<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://meeraacademy.com/wp-content/uploads/2017/08/addcourse.gif" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text">Add Course Form – Student Management System</figcaption></figure>
-<p>Above image shows how to add course detail with course name, fees, time duration detail.</p>
+<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/course-add.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text">Add Course Form – Student Management System</figcaption></figure>
+<p>Above image shows how to add course detail with course name, standart price, time duration detail.</p>
 <hr>
 <h3>ADD Teacher Form</h3>
-<figure id="attachment_6741" aria-describedby="caption-attachment-6741" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6741" src="https://meeraacademy.com/wp-content/uploads/2017/08/addteacher.gif" alt="student management system" width="554" height="335"><figcaption id="caption-attachment-6741" class="wp-caption-text">Add Teacher Form – Student Management System</figcaption></figure>
+<figure id="attachment_6741" aria-describedby="caption-attachment-6741" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6741" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-add.png" alt="student management system" width="554" height="335"><figcaption id="caption-attachment-6741" class="wp-caption-text">Add Teacher Form – Student Management System</figcaption></figure>
 <hr>
 <h3>ADD Student Form</h3>
-<figure id="attachment_6744" aria-describedby="caption-attachment-6744" style="width: 880px" class="wp-caption aligncenter"><img class="size-full wp-image-6744" src="https://meeraacademy.com/wp-content/uploads/2017/08/addstudent.png" alt="student system" width="880" height="319" srcset="https://meeraacademy.com/wp-content/uploads/2017/08/addstudent.png 880w, https://meeraacademy.com/wp-content/uploads/2017/08/addstudent-300x109.png 300w, https://meeraacademy.com/wp-content/uploads/2017/08/addstudent-768x278.png 768w, https://meeraacademy.com/wp-content/uploads/2017/08/addstudent-500x181.png 500w" sizes="(max-width: 880px) 100vw, 880px"><figcaption id="caption-attachment-6744" class="wp-caption-text">Add Student Form – Student Management System C#.Net</figcaption></figure>
+<figure id="attachment_6744" aria-describedby="caption-attachment-6744" style="width: 880px" class="wp-caption aligncenter"><img class="size-full wp-image-6744" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-add.png" alt="student system" width="880" height="319"  sizes="(max-width: 880px) 100vw, 880px"><figcaption id="caption-attachment-6744" class="wp-caption-text">Add Student Form – Student Management System C#.Net</figcaption></figure>
 <p>Here, we add student personal detail with education detail, In education detail portion we can select only those course which we have already added to system. The course fees detail automatically fetch according to course. After adding student detail we can manage fees detail.</p>
 
 </div>
