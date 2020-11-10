@@ -73,7 +73,7 @@
 <hr>
 <h3>ADD Course Form</h3>
 <hr>
-<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/course-add.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text">Add Course Form – Student Management System</figcaption></figure>
+<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/course-add.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"></br>Add Course Form – Student Management System</figcaption></figure>
 <p>Above image shows how to add course detail with course name, standart price, time duration detail.</p>
 <hr>
 <h3>ADD Teacher Form</h3>
