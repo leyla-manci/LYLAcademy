@@ -22,7 +22,7 @@
 </tr>
 <tr>
 <td><strong>Technology :</strong></td>
-<td>Visual Studio 2019 with C#,HTML,CSS,JS,Typscript Language</br> (ASP.NET CORE MVC Web API + Angular 10 + SQL Server 2019)</td>
+<td>Visual Studio 2019 with C#,HTML,CSS,JS,Typscript Language</br> (ASP.NET CORE MVC Web API +EntityFramework + Angular 10 + SQL Server 2019)</td>
 </tr>
 <tr>
 <td><strong>Database :</strong></td>
@@ -72,7 +72,6 @@
 </table>
 <hr>
 <h3>ADD Course Form</h3>
-<hr>
 <figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/course-add.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"></br></figcaption></figure>
 <p>Above image shows how to add course detail with course name, standart price, time duration detail.</p>
 <hr>
@@ -97,10 +96,10 @@
 <hr>
 <h3>Scheduled Course Student Form</h3>
 <p>Here, we provide search facility by scheduled course information,can display course detail. Student can display own course list. Also student can display other scheduled courses and can join any of them.</p>
-<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-tojoin-course-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br>Student Search Form – Student Management System C#.Net</figcaption></figure>
+<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-tojoin-course-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br></figcaption></figure>
 <hr>
 <h3>Scheduled Course Admin-Teacher Form</h3>
-<p>Here, we provide search facility  by scheduled course information.Admin can delete if there is not any participant,can edit-create-display detail and change fees data.>/br>Teacher can create own scheduled course on calendar, can edit content and display detail.</p>
+<p>Here, we provide search facility  by scheduled course information.Admin can delete if there is not any participant,can edit-create-display detail and change fees data.</br>Teacher can create own scheduled course on calendar, can edit content and display detail.</p>
 <figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/scheduled-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br></figcaption></figure>
 <hr>
 <p>This academy management software system has some more forms like :</p>
@@ -113,7 +112,7 @@
 
 <p>This academy management software system has some more forms like :</p>
 <ul>
-<li>Add, List User Form</li>
+<li>Add, List User Form : Admin can crud user,set user as teacher,student or admin role. Also when admin create or update student/teacher can set the related username.</li>
 <li>Add ,List Teacher Form</li>
 </ul>
 
