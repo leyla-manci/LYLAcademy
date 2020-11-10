@@ -6,7 +6,9 @@
 <h2>Academy Management System Project in Agular</h2>
 <p>Lets, start to develop <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/Assignment.pdf" target="_blank" rel="noopener noreferrer">c#.net project</a> for student management system. We'll take <a href="https://meeraacademy.com/er-diagram-for-student-management-system/">this project</a> as base.</br>
 This base project has just <a href="https://meeraacademy.com/dfd-diagram-for-student-management-system-project/">admin</a> role to manage the system. Our project will include two more role as student and teacher to manage some process in scope of their authorization. </p>
-<p> <a href="https://lylacademy4.azurewebsites.net/">Angular project azure link </a> </br> login :   user admin  ,  password : admin </p>
+<p> You can check the completed project by this : <a href="https://lylacademy4.azurewebsites.net/">Angular project azure link </a> </br>
+with parameters to login ;  </br>
+username: admin  ,  password : admin </p>
 <table>
 <tbody>
 <tr>
@@ -193,3 +195,14 @@ This base project has just <a href="https://meeraacademy.com/dfd-diagram-for-stu
 </tr>
 </tbody>
 </table>
+</hr>
+<p> for the better solution :</br>
+ -user and role must be improved with Microsoft.AspNet.Identity.EntityFramework.</br>
+ -password must be managed with salting and hashing methods.</br>
+ -API access functions must be provided by IApprepository&AppRepository. I used repository patern as an instance : for user with     <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/IAuthRepository.cs">IAuthRepository</a> -
+     <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/AuthRepository.cs">AuthRepository</a> on <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/AuthController.cs">AuthController</a>.</br>
+     same structure must be applied to  <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/IAppRepository.cs">IAppRepository</a> -
+     <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/AppRepository.cs">AppRepository</a>
+     </br>
+   -I applied <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Helpers/AutoMapperProfiles.cs ">AutoMapperProfiles</a> to mapp DTO's to models for some instances.It would be better if applied to remain models.
+ </p>
