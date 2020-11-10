@@ -119,27 +119,76 @@
 </tr>
 <tr>
 <td><strong>Courses</strong></td>
-<td>Related API Model,Controller & Angular Companent,Model,Services</td>
+  <td>Related API
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Models/Course.cs">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/CoursesController.cs">Controller</a>
+    & Angular 
+    <a href="https://github.com/leyla-manci/LYLAcademy/tree/master/LYLAcademy-SPA/src/app/course">Component</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/models/Course.ts">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/services/course.service.ts">Services</a>
+  </td>
 </tr>
 <tr>
 <td><strong>Teachers</strong></td>
-<td>Table contain user name, teacher detail Name, Qualification detail </td>
+<td>
+  Related API
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Models/Teacher.cs">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/TeachersController.cs">Controller</a>
+    & Angular 
+    <a href="https://github.com/leyla-manci/LYLAcademy/tree/master/LYLAcademy-SPA/src/app/teacher">Component</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/models/Teacher.ts">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/services/teacher.service.ts">Services</a>
+  </td>
 </tr>
 <tr>
 <td><strong>Students</strong></td>
-<td>Table contain user name, student detail Name, contact detail </td>
+<td>
+  Related API
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Models/Student.cs">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/StudentsController.cs">Controller</a>
+    & Angular 
+    <a href="https://github.com/leyla-manci/LYLAcademy/tree/master/LYLAcademy-SPA/src/app/student">Component</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/models/Student.ts">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/services/student.service.ts">Services</a>
+  </td>
 </tr>
 <tr>
 <td><strong>Users</strong></td>
-<td>Table Store username and password detail for login purpose.</td>
+<td>
+  Related API
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Models/User.cs">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/UsersController.cs">Controller</a> ,
+     <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/IAuthRepository.cs">IRepository</a> ,
+     <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/AuthRepository.cs">Repository</a>
+    & Angular 
+    <a href="https://github.com/leyla-manci/LYLAcademy/tree/master/LYLAcademy-SPA/src/app/user">Component</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/models/User.ts">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/services/user.service.ts">Services</a>
+ </td>
 </tr>
   <tr>
 <td><strong>Calendars</strong></td>
-<td>Table store all the detail of  scheduled course , content , price, course, participants and Fees Detail.</td>
+<td>
+    Related API
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Models/Calendar.cs">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/CalendarsController.cs">Controller</a>
+    & Angular 
+    <a href="https://github.com/leyla-manci/LYLAcademy/tree/master/LYLAcademy-SPA/src/app/calendar">Component</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/models/Calendar.ts">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/services/calendar.service.ts">Services</a>
+    </td>
 </tr>
   <tr>
 <td><strong>Participants</strong></td>
-<td>Table store the participant and scheduled course relation.</td>
+<td>
+    Related API
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Models/Participant.cs">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Controllers/ParticipantsController.cs">Controller</a>
+    & Angular 
+    <a href="https://github.com/leyla-manci/LYLAcademy/tree/master/LYLAcademy-SPA/src/app/participant">Component</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/models/Participant.ts">Model</a>,
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy-SPA/src/app/services/participant.service.ts">Services</a>
+    </td>
 </tr>
 </tbody>
 </table>
