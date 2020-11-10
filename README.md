@@ -105,14 +105,41 @@
 <p>This academy management software system has some more forms like :</p>
 <ul>
   <li><a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/user-add.png">Add</a>, 
-    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/user-list.png">List</a> User Form</li>
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/user-list.png">List</a> User Form </br>Admin can crud user,set user as teacher,student or admin role. Also when admin create or update student/teacher can set the related username</li>
 <li><a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-add.png">Add</a>, 
     <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-list.png">List</a> Teacher Form</li>
 </ul>
-
-<p>This academy management software system has some more forms like :</p>
-<ul>
-<li>Add, List User Form : Admin can crud user,set user as teacher,student or admin role. Also when admin create or update student/teacher can set the related username.</li>
-<li>Add ,List Teacher Form</li>
-</ul>
-
+<h3>Related API Model,Controller & Angular Companent,Model,Services</h3>
+<p>Here, related source link for this academy software to have detail information .</p>
+<table>
+<tbody>
+<tr>
+<th style="text-align: left; width: 15%;">Table Name</th>
+<th style="text-align: left;">&nbsp;Related Links</th>
+</tr>
+<tr>
+<td><strong>Courses</strong></td>
+<td>Related API Model,Controller & Angular Companent,Model,Services</td>
+</tr>
+<tr>
+<td><strong>Teachers</strong></td>
+<td>Table contain user name, teacher detail Name, Qualification detail </td>
+</tr>
+<tr>
+<td><strong>Students</strong></td>
+<td>Table contain user name, student detail Name, contact detail </td>
+</tr>
+<tr>
+<td><strong>Users</strong></td>
+<td>Table Store username and password detail for login purpose.</td>
+</tr>
+  <tr>
+<td><strong>Calendars</strong></td>
+<td>Table store all the detail of  scheduled course , content , price, course, participants and Fees Detail.</td>
+</tr>
+  <tr>
+<td><strong>Participants</strong></td>
+<td>Table store the participant and scheduled course relation.</td>
+</tr>
+</tbody>
+</table>
