@@ -73,40 +73,47 @@
 <hr>
 <h3>ADD Course Form</h3>
 <hr>
-<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/course-add.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"></br>Add Course Form – Student Management System</figcaption></figure>
+<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/course-add.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"></br></figcaption></figure>
 <p>Above image shows how to add course detail with course name, standart price, time duration detail.</p>
 <hr>
 <h3>ADD Teacher Form</h3>
-<figure id="attachment_6741" aria-describedby="caption-attachment-6741" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6741" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-add.png" alt="student management system" width="554" height="435"><figcaption id="caption-attachment-6741" class="wp-caption-text">Add Teacher Form – Student Management System</figcaption></figure>
+<figure id="attachment_6741" aria-describedby="caption-attachment-6741" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6741" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-add.png" alt="student management system" width="554" height="435"><figcaption id="caption-attachment-6741" class="wp-caption-text"></br></figcaption></figure>
+<p>Above image shows how to add teacher detail with  name, branch, username ...</p>
 <hr>
 <h3>ADD Student Form</h3>
-<figure id="attachment_6744" aria-describedby="caption-attachment-6744" style="width: 880px" class="wp-caption aligncenter"><img class="size-full wp-image-6744" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-add.png" alt="student system" width="880" height="419"  sizes="(max-width: 880px) 100vw, 880px"><figcaption id="caption-attachment-6744" class="wp-caption-text"></br>Add Student Form – Student Management System C#.Net</figcaption></figure>
-<p>Here, we add student personal detail with education detail, In education detail portion we can select only those course which we have already added to system. The course fees detail automatically fetch according to course. After adding student detail we can manage fees detail.</p>
+<figure id="attachment_6744" aria-describedby="caption-attachment-6744" style="width: 880px" class="wp-caption aligncenter"><img class="size-full wp-image-6744" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-add.png" alt="student system" width="880" height="419"  sizes="(max-width: 880px) 100vw, 880px"><figcaption id="caption-attachment-6744" class="wp-caption-text"></br></figcaption></figure>
+<p>Above image shows how to add student detail with  name, contact information, username ...</p>
 
 </div>
 
 <hr>
-<h3>ADD Fees Form</h3>
-<p>This student fees form used to maintain student fees detail. Admin makes fees entry when student paid fees to institute. This form very useful to maintain fess status by paid fees and remaining fees.</p>
-<figure id="attachment_6748" aria-describedby="caption-attachment-6748" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6748" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/scheduled-course-detail.png" alt="Student Management System" width="554" height="410"><figcaption id="caption-attachment-6748" class="wp-caption-text"></br>Add Fees Form – Student Management System C#.Net</figcaption></figure>
+<h3>ADD Fees & Scheduled course detail Form</h3>
+<p>This scheduled course detail form used to maintain student fees detail. Admin makes fees entry when student paid fees to institute. This form very useful to maintain fess status by paid fees and remaining fees.</p>
+<figure id="attachment_6748" aria-describedby="caption-attachment-6748" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6748" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/scheduled-course-detail.png" alt="Student Management System" width="554" height="410"><figcaption id="caption-attachment-6748" class="wp-caption-text"></br></figcaption></figure>
 <hr>
 <h3>Student Search Form</h3>
-<p>Here, we provide search facility by student name wise, course wise, teacher wise and fees status wise.</p>
-<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br></br>Student Search Form – Student Management System C#.Net</figcaption></figure>
+<p>Here, we provide search facility by each student information</p>
+<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br></figcaption></figure>
 <hr>
 <h3>Scheduled Course Student Form</h3>
-<p>Here, we provide search facility by student name wise, course wise, teacher wise and fees status wise.</p>
+<p>Here, we provide search facility by scheduled course information,can display course detail. Student can display own course list. Also student can display other scheduled courses and can join any of them.</p>
 <figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/student-tojoin-course-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br>Student Search Form – Student Management System C#.Net</figcaption></figure>
 <hr>
 <h3>Scheduled Course Admin-Teacher Form</h3>
-<p>Here, we provide search facility by student name wise, course wise, teacher wise and fees status wise.</p>
-<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/scheduled-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br>Student Search Form – Student Management System C#.Net</figcaption></figure>
+<p>Here, we provide search facility  by scheduled course information.Admin can delete if there is not any participant,can edit-create-display detail and change fees data.>/br>Teacher can create own scheduled course on calendar, can edit content and display detail.</p>
+<figure id="attachment_6750" aria-describedby="caption-attachment-6750" style="width: 792px" class="wp-caption aligncenter"><img class="size-full wp-image-6750" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/scheduled-list.png" alt="student management software" width="792" height="457"  sizes="(max-width: 792px) 100vw, 792px"><figcaption id="caption-attachment-6750" class="wp-caption-text"></br></figcaption></figure>
 <hr>
-<p>This student management software system has some more forms like :</p>
+<p>This academy management software system has some more forms like :</p>
 <ul>
-<li>Delete Student Account Form</li>
-<li>Add Login User Form</li>
-<li>Delete Course Form</li>
-<li>Delete Teacher Form</li>
+  <li><a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/user-add.png">Add</a>, 
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/user-list.png">List</a> User Form</li>
+<li><a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-add.png">Add</a>, 
+    <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/teacher-list.png">List</a> Teacher Form</li>
+</ul>
+
+<p>This academy management software system has some more forms like :</p>
+<ul>
+<li>Add, List User Form</li>
+<li>Add ,List Teacher Form</li>
 </ul>
 
