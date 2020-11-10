@@ -204,5 +204,5 @@ username: admin  ,  password : admin </p>
      same structure must be applied to  <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/IAppRepository.cs">IAppRepository</a> -
      <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Data/AppRepository.cs">AppRepository</a>
      </br>
-   -I applied <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Helpers/AutoMapperProfiles.cs ">AutoMapperProfiles</a> to mapp DTO's to models for some instances.It would be better if applied to remain models.
+   -I applied <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Helpers/AutoMapperProfiles.cs ">AutoMapperProfiles</a> to mapp DTO's to models for some instances.It would be better if aotumapper solution applied to other models too.
  </p>
