@@ -4,10 +4,11 @@
 <div class="entry-content clearfix" style="height: auto !important;">
 
 <h2>Academy Management System Project in Agular</h2>
-<p>Lets, start to develop <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/Assignment.pdf" target="_blank" rel="noopener noreferrer">c#.net project</a> for student management system. We'll take <a href="https://meeraacademy.com/er-diagram-for-student-management-system/">this project</a> as base.</br>
-This base project has just <a href="https://meeraacademy.com/dfd-diagram-for-student-management-system-project/">admin</a> role to manage the system. Our project will include two more role as student and teacher to manage some process in scope of their authorization. </p>
-<p> You can check the completed project by this : <a href="https://lylacademy4.azurewebsites.net/">Angular project azure link </a> </br>
-with parameters <b>to login</b> ;  username: <b>admin</b>  ,  password : <b>admin</b>
+<p>Let's start to develop <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/Assignment.pdf" target="_blank" rel="noopener noreferrer">c#.net project</a> for student management system. We'll use <a href="https://meeraacademy.com/er-diagram-for-student-management-system/">this project</a> as base.</br>
+This base project just has <a href="https://meeraacademy.com/dfd-diagram-for-student-management-system-project/">admin</a> role to manage the system. Our project will include 
+two more roles: student and teacher. They manage some processes within the limits of their authorization. </p>
+<p> You can check the completed project here : <a href="https://lylacademy4.azurewebsites.net/">Angular project azure link </a> </br>
+with these <b>login parameters </b> ;  username: <b>admin</b>  ,  password : <b>admin</b>
 </p>
 <table>
 <tbody>
