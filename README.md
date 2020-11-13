@@ -210,3 +210,23 @@ with these <b>login parameters </b> ;
      </br>
    -I applied <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Helpers/AutoMapperProfiles.cs ">AutoMapperProfiles</a> to map DTO's to models for some instances.It would be better if automapper solution applied to other models too.
  </p>
+ </hr>
+  <h3><a href="https://bootswatch.com/sketchy/>"Bootswatch Sketchy</a> & <a href="https://drive.google.com/file/d/1UZlthaeNVzoS6RgNbO4AUl2TreqputHE/view?usp=sharing">Angle</a> Theme Forms</h3>
+ <table><thead><tr><th>Form</th><th>Sketchy Theme</th><th>Angle Theme</th></tr></thead><tbody>
+ 
+ <tr>
+ <td> Login
+ </td>
+ <td>
+  <figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/login.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"></br></figcaption></figure>
+ </td>
+ <td>
+
+<figure id="attachment_6738" aria-describedby="caption-attachment-6738" style="width: 554px" class="wp-caption aligncenter"><img class="size-full wp-image-6738" src="https://github.com/leyla-manci/LYLAcademy/blob/master/_screenschot/login-angleth.png" alt="Student management software" width="554" height="335"><figcaption id="caption-attachment-6738" class="wp-caption-text"></br></figcaption></figure>
+ </td>
+
+</tr>
+ 
+ </tbody></table>
+ 
+ 
