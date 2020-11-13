@@ -211,7 +211,7 @@ with these <b>login parameters </b> ;
    -I applied <a href="https://github.com/leyla-manci/LYLAcademy/blob/master/LYLAcademy.API/LYLAcademy.API/Helpers/AutoMapperProfiles.cs ">AutoMapperProfiles</a> to map DTO's to models for some instances.It would be better if automapper solution applied to other models too.
  </p>
  </hr>
-  <h3><a href="https://bootswatch.com/sketchy/>"Bootswatch Sketchy</a> & <a href="https://drive.google.com/file/d/1UZlthaeNVzoS6RgNbO4AUl2TreqputHE/view?usp=sharing">Angle</a> Theme Forms</h3>
+  <h3><a href="https://bootswatch.com/sketchy/">Bootswatch Sketchy</a> & <a href="https://drive.google.com/file/d/1UZlthaeNVzoS6RgNbO4AUl2TreqputHE/view?usp=sharing">Angle</a> Theme Forms</h3>
  <table><thead><tr><th>Form</th><th>Sketchy Theme</th><th>Angle Theme</th></tr></thead><tbody>
  
  <tr>
