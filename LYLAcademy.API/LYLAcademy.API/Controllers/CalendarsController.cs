@@ -65,6 +65,20 @@ namespace LYLAcademy.API.Controllers
                     {
                         calendarList[i].Course = course;
                     }
+                    
+                    /*
+                                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                    if (course != null)
+                    {
+                        calendarList[i].Course = course;
+                    }
+                                        Course course = _context.Courses.FirstOrDefault(part => part.CourseId == calendarList[i].CourseId);
+                    if (course != null)
+                    {
+                        calendarList[i].Course = course;
+                        calendarList[i].Course = course;
+                    }
+                    */
                 }
 
 
