@@ -8,6 +8,8 @@
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
  */
 import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormControl,
@@ -23,9 +25,11 @@ import { AuthService } from '../services/Auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.css'],kmk5458645
+ m 
+. 
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent  OnInit {
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
