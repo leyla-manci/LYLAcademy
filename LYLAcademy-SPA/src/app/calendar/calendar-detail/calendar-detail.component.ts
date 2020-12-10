@@ -55,6 +55,16 @@ export class CalendarDetailComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.calendarId = params['calendarId'];
     });
+    
+    /*
+    
+      ngOnInit() {
+    this.calendar.teacher = new Teacher();
+    this.calendar.course = new Course();
+    this.activatedRoute.params.subscribe((params) => {
+      this.calendarId = params['calendarId'];
+    });
+    */
 
     this.refresh(this.calendarId);
   }
